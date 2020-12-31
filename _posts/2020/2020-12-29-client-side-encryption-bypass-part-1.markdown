@@ -6,8 +6,6 @@ excerpt: ""
 comments: true
 ---
 
-# Cold war with Javascript
-
 ### **TL;DR**
 In this blog we will discuss about the extra security layer implemented inside application which is **encryption mechanism**. It will be a series of how to break the client side encryption and add our payload to the actual parameter and perform the application security testing. For this series we will use [DevTool](https://developers.google.com/web/tools/chrome-devtools) as our main Tool.
 Below is the series of content:
