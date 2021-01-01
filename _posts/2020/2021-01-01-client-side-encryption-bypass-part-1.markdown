@@ -31,13 +31,13 @@ JavaScript is everywhere.
 
 For the developers it is used to build stuff but for attacker JavaScript is used for breaking stuff.
 
-For more please visit: [Javascript.info](http://javascript.info/)
+For more please visit: [JavaScript.info](http://javascript.info/)
 
 ### What you can do with JavaScript?
 
 As I said JavaScript is everywhere.
 
-Previously JavaScript was only used in browser to build interactive web application, later with the support of huge community and companies i.e. Google and Facebook, this days you can build a complete -
+Previously JavaScript was only used in browser to build interactive web application, later with the support of huge community and companies i.e. Google and Facebook, this day's you can build a complete -
 
 1. Web/Mobile applications. </br>
 2. Real-time networking apps (chats, video streaming).</br>
@@ -48,60 +48,62 @@ Previously JavaScript was only used in browser to build interactive web applicat
 
 ### JavaScript vs ECMAScript?
 
-Javascript is language and [ECMAScript](https://en.wikipedia.org/wiki/ECMAScript) is a scripting-language specification standardized by Ecma International.
+Javascript is a language and [ECMAScript](https://en.wikipedia.org/wiki/ECMAScript) is a scripting-language specification standardized by ECMA International.
 
 ### Where does JavaScript code run?
 
-JavaScript engines (V8 for Chrome, spidermonkey for firefox etc.)
-Previously we only able to run javascript inside browser only.
+JavaScript engines (V8 for Chrome, spider monkey for Firefox etc.)
+Previously we were only able to run JavaScript inside browser only.
 but later on Node was developed (which is nothing but Javascript engine outside browser).
 
 ### Debugging with DevTools:
 
 We will not go in the basic's of DevTools, to understand the DevTools you can read this [Blog](https://blittle.github.io/chrome-dev-tools/)
 
-## Let get into the main topic:
+### Let get into the main topic:
 
-### How the normal request and response structure looks if there is no encryption is implemented.
+#### How the normal request and response structure looks if there is no encryption implemented.
 
-below is the normal request and response structure which shows that normally the parameteres are in clear text as there is no encryption is implemented.
+Below is the normal request and response structure which shows that normally the parameters are in clear text as there is no encryption is implemented.
 
 ![](/images/encryption_bypass_part1/1.png)
 
-### How the normal request and response structure looks if there is encryption is implemented.
+### How the normal request and response structure looks if there is an encryption implemented.
 
 ![](/images/encryption_bypass_part1/2.png)
 
 In above screen shot you can see the password parameter is encrypted and the response as well.
 
-So to test the password parameter with our paylaods we have to break the encryption and also to understand the response we need to break the encrypted response first.
+So to test the password parameter with our paylaods we have to break the encryption and also to understand the response we have to break the encrypted response as well.
 
-### What developer thinks?
+### What developers think?
 
 For developers they usually hide sensitive information inside the encrypted value, as they assume that the encryption means they are secure, no one can break there encryption even if the logic is default one.
 
-Even if you highlight any issue to them, the first remidiation they will think about it encrypt the encrypted data again or encrypt the encryption key kind of chaining and they say now you can not break it.
+Even if you highlight any issue to them, the first remidiation they will think about it encrypt the encrypted data again or encrypt the encryption key kind of chaining and they will claim that no one can break this.
 
 ### Breaking and Bypassing encryption:
 
  1. **What?**:
  
-    First Question is what?
-    As there are multiple ways of encryption can be implemented.
+    As there are multiple ways of encryption can be implemented on request data.</br>
     Most common example is :
     
     1. **Encrypting the parameters:**
-        i.e. some parameters value will get encrypted.
+        i.e. some parameters value will get encrypted.</br>
         ![](/images/encryption_bypass_part1/2.png)
         
     2. **Encrypting the whole body:**
-        i.e. whole post data is encrypted, so no one can guess what are the parameters passing through this request.
+        i.e. whole post data is encrypted, so no one can guess what are the parameters passing through this request.</br>
  
  2. **How?**:
  
-    There are lot of ways to break the encryption, but below are the steps which i personally follow to find the logic and break the encryption.
-    We will understand below steps with any example:
-    i.e. we have one application which asks for user email and password for authentication.
+    There are lot of ways to break the encryption, but below are the steps which I personally follow to find the logic and break the encryption.</br>
+    We will understand below steps with one example:</br>
+    
+    I have prepared one demo application which helps us to understand the process, you can get the docker version of it from this [link](), once you are done with the setup please continue for the next.
+    
+    So we have one web application which asks for user email and password for authentication.
     
     ![](/images/encryption_bypass_part1/3.png)
     
@@ -109,11 +111,11 @@ Even if you highlight any issue to them, the first remidiation they will think a
     
     ![](/images/encryption_bypass_part1/4.png)
     
-    When you provide valid OTP you can log in, else you can not.
+    When you provide valid OTP you can log in, else you will get "Access Denied".
     
     ![](/images/encryption_bypass_part1/5.png)
     
-    **So our aim is to bypass the OTP.**
+    **So our aim is to bypass the OTP after breaking the encryption logic.**
  
     a.) **Understand the application and it's flow.**
     
@@ -124,7 +126,7 @@ Even if you highlight any issue to them, the first remidiation they will think a
     Once you will identify that what really you wanted to break, is it a parameter which is encrypted? or the whole request body?
     great you are good to go than.
     
-    For this step I am hopping you are already familier with **burpsuite tool** but it is not compulsory as we are just using burp to understand the request structure same we can do with DevTool Network option as well.
+    For this step I am hopping you are already familier with [**burpsuite tool**](https://portswigger.net/burp) but it is not compulsory as we are just using burp to understand the request structure same we can do with DevTools Network option as well.
     
     Lets intercept the login request first and observe the request and response structure.
         
