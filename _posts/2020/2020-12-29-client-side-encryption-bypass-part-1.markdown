@@ -17,7 +17,7 @@ Part 3: Understanding the Logic of encryption and fuzz the parameters.</br>
 their is lot more stay tune for that.
 
 ```
-Debugger is you're friend.
+Debugger is your friend.
 ```
 ### Introduction
 
@@ -29,21 +29,22 @@ JavaScript is one of the most popular and widely used programming languages in t
 
 JavaScript is everywhere.
 
-For the developers it is used to build stuff but for attacker javascript is used for breaking stuff.
+For the developers it is used to build stuff but for attacker JavaScript is used for breaking stuff.
 
 For more please visit: [Javascript.info](http://javascript.info/)
 
 ### What you can do with JavaScript?
 
-As I said Javascript is everywhere.
+As I said JavaScript is everywhere.
 
-previously javascript was only used in browser to build interactive web application, later with the support of huge community and companies i.e. google and facebook, this days you can build a complete 
-1. web/mobile applications
-2. Real-time networking apps (chats, video streamings)
-3. command line tools
-4. games
-5. Desktop Application.
-6. [Windows95](https://github.com/felixrieseberg/windows95)
+Previously JavaScript was only used in browser to build interactive web application, later with the support of huge community and companies i.e. Google and Facebook, this days you can build a complete -
+
+1. Web/Mobile applications. </br>
+2. Real-time networking apps (chats, video streaming).</br>
+3. Command line tools.</br>
+4. Games.</br>
+5. Desktop Application.</br>
+6. [Windows95](https://github.com/felixrieseberg/windows95).
 
 ### JavaScript vs ECMAScript?
 
@@ -55,8 +56,11 @@ JavaScript engines (V8 for Chrome, spidermonkey for firefox etc.)
 Previously we only able to run javascript inside browser only.
 but later on Node was developed (which is nothing but Javascript engine outside browser).
 
-### Debugging with DevTool:
+### Debugging with DevTools:
 
+We will not go in the basic's of DevTools, to understand the DevTools you can read this [Blog](https://blittle.github.io/chrome-dev-tools/)
+
+## Let get into the main topic:
 
 ### How the normal request and response structure looks if there is no encryption is implemented.
 
