@@ -2,7 +2,7 @@
 layout: "post"
 title: "Client Side Encryption Bypass Part-1"
 date: "2020-01-02 10:56"
-excerpt: "In this blog we will discuss the extra security layer implemented inside the application which is **encryption mechanism**. It will be a series of how to break the client side encryption and add our payload to the actual parameter and perform the application security testing."
+excerpt: "In this blog we will discuss the extra security layer implemented inside the application which is encryption mechanism. It will be a series of how to break the client side encryption and add our payload to the actual parameter and perform the application security testing."
 comments: false
 ---
 
