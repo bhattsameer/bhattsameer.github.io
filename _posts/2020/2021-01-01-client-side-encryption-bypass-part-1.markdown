@@ -207,9 +207,21 @@ Even if you highlight any issue to them, the first remidiation they will think a
     AES (Encryption type)
     key
     
-    Once you search for the keyword you will get the result and when you click one of them you will be autometically redirected to that specific file and the line number
+    Once you search for the keyword you will get the result and when you click one of them you will be autometically redirected to that specific file and the line number.
+    
+    [Image source]
+    
+    Observe the below screen shot we found one method *logear* which contains key and perfom encryption of password.
+    
+    [Image source]
+    
+    There is also one another way using inspect element feature, navigate to the element tab in DevTools and navigate to login button in DOM tree and observe the tag and it's attribute, some time the attributes help you get the action method. Like in below screen shot: 
+    we have one attribute *onClick* which contains value *logear()* and this *logear()* is method, which is responsible for encryption.
+    
+    [Image element]
     
     d.) Want to break encryption? Or Bypass something?
+    
     
     
     
