@@ -62,7 +62,7 @@ We will not go in the basic's of DevTools, to understand the DevTools you can re
 
 ### Let get into the main topic:
 
-#### How the normal request and response structure looks if there is no encryption implemented.
+### How the normal request and response structure looks if there is no encryption implemented.
 
 Below is the normal request and response structure which shows that normally the parameters are in clear text as there is no encryption is implemented.
 
@@ -94,7 +94,8 @@ Even if you highlight any issue to them, the first remidiation they will think a
         ![](/images/encryption_bypass_part1/2.png)
         
     2. **Encrypting the whole body:**
-        i.e. whole post data is encrypted, so no one can guess what are the parameters passing through this request.</br>
+        i.e. whole post data is encrypted, so no one can guess what are the parameters passing through this request. exampl in below observe the response body completely encrypted.</br>
+        ![](/images/encryption_bypass_part1/3.png)
  
  2. **How?**:
  
@@ -105,15 +106,15 @@ Even if you highlight any issue to them, the first remidiation they will think a
     
     So we have one web application which asks for user email and password for authentication.
     
-    ![](/images/encryption_bypass_part1/3.png)
+    ![](/images/encryption_bypass_part1/4.png)
     
     once we entered correct details it will send an OTP to registered mobile number and email address.
     
-    ![](/images/encryption_bypass_part1/4.png)
+    ![](/images/encryption_bypass_part1/6.png)
     
     When you provide valid OTP you can log in, else you will get "Access Denied".
     
-    ![](/images/encryption_bypass_part1/5.png)
+    ![](/images/encryption_bypass_part1/10.png)
     
     **So our aim is to bypass the OTP after breaking the encryption logic.**
  
@@ -130,7 +131,7 @@ Even if you highlight any issue to them, the first remidiation they will think a
     
     Lets intercept the login request first and observe the request and response structure.
         
-    ![](/images/encryption_bypass_part1/6.png)
+    ![](/images/encryption_bypass_part1/5.png)
         
     In the request *Password* parameter is encrypted and also the whole response is encrypted as well.
     
@@ -138,19 +139,19 @@ Even if you highlight any issue to them, the first remidiation they will think a
     
     ![](/images/encryption_bypass_part1/7.png)
     
-    We can observe that our six digit otp is converted into an encrypted value using some logic and response from server is also something encrypted that we do not know but we can get the response in front end or in browser.
+    We can observe that our six digit otp 123456 is converted into an encrypted value using some logic and response from server is also something encrypted that we do not know but we can get the response in front end or in browser.
     
-    i.e. below is error response when we have entered wrong OTP.
+    i.e. below is error response when we have entered wrong login credentials and also wrong OTP.
     
     ![](/images/encryption_bypass_part1/9.png)
     
-    ![](/images/encryption_bypass_part1/8.png)
+    ![](/images/encryption_bypass_part1/10.png)
     
     Next we have to observe all the requests which triggers when we click on Login button.
     
     i.e. here we can see there are four main requests triggers when we click on Login and OTP:
     
-    ![](/images/encryption_bypass_part1/10.png)
+    ![](/images/encryption_bypass_part1/11.png)
     
     First login.php will invoke which redirect to Validate.php and that validate.php will contains our email and encrypted password as parameter and in response we will get encrypted data.
     
@@ -158,6 +159,7 @@ Even if you highlight any issue to them, the first remidiation they will think a
     
     Post success we will get My_account.php which is dashboard of user who is logged in.
     
+    ![](/images/encryption_bypass_part1/8.png)
     
     b.) When you found something, ask yourself is it on client side?
     
@@ -179,7 +181,7 @@ Even if you highlight any issue to them, the first remidiation they will think a
     - Right click on mouse and navigate to inspect element.
     - Open it up from Developer tools section from browser settings.
     
-    Image 
+    ![](/images/encryption_bypass_part1/13.png)
    
     Here in this blog, we will only talk about:
     
@@ -187,38 +189,38 @@ Even if you highlight any issue to them, the first remidiation they will think a
     2. Console: It is used to run the your JavaScript code.
     3. Sources: This is the most powerful and useful feature of DevTools. All the sources called or used by the application at that moment can be found here as a source tree of application.
     
-    We will talk about other tabs later on in the series.
+    We will talk about other tabs later in this series.
     
     As we know the logic part will be written as a JavaScript, hence we can assume that the encryption logic is also somewhere in the JavaScript file. This is not the only case some time the JS code is used inside the same file using <script> tag.
   
     To get the list of source in DevTools navigate to sources tab and observe all the files.
     
-    Image of source tab
+    ![](/images/encryption_bypass_part1/14.png)
     
     One way to indentify the logic is to read the all JS files and logic's used inside the application and understand it. But this process is really take out lot of your time and also sometimes the code is obfuscated and also it is very lengthy as well.
     So one easy way to find the logic is using keyword based search, in source tab click **Ctrl+Shift+f** and you will get one search bar, this is a global search feature of Chrome DevTools, by which you can search the text in all the files listed there in source tab.
-    
+    ```
     Some of the best keywords you can search for:
-    encrypt
-    crypt
-    OTP (As the otp parameter is having encrypted value)
-    password (As the password field is having encrypted value)
-    RSA (Encryption type) 
-    AES (Encryption type)
-    key
-    
+    - encrypt
+    - crypt
+    - OTP (As the otp parameter is having encrypted value)
+    - password (As the password field is having encrypted value)
+    - RSA (Encryption type) 
+    - AES (Encryption type)
+    - key
+    ```
     Once you search for the keyword you will get the result and when you click one of them you will be autometically redirected to that specific file and the line number.
     
-    [Image source]
+    ![](/images/encryption_bypass_part1/15.png)
     
-    Observe the below screen shot we found one method *logear* which contains key and perfom encryption of password.
+    Observe the below screen shot we found one method ***logear()*** which contains key and perfom encryption of password.
     
-    [Image source]
+    ![](/images/encryption_bypass_part1/16.png)
     
     There is also one another way using inspect element feature, navigate to the element tab in DevTools and navigate to login button in DOM tree and observe the tag and it's attribute, some time the attributes help you get the action method. Like in below screen shot: 
-    we have one attribute *onClick* which contains value *logear()* and this *logear()* is method, which is responsible for encryption.
+    we have one attribute *onClick* which contains value ***logear()*** and this ***logear()*** is method, which is responsible for encryption.
     
-    [Image element]
+    ![](/images/encryption_bypass_part1/17.png)
     
     d.) Want to break encryption? Or Bypass something? Find the logic.
     
@@ -268,16 +270,16 @@ Even if you highlight any issue to them, the first remidiation they will think a
    
    Once we understood the logic we can put our debug point at Line No. 3 as it contains the encryption method.
    
-   [Image of debug point at Line 3]
+   ![](/images/encryption_bypass_part1/18.png)
    
    Once you have added your debug point, submit the data in the application and click on login button, the process will autometically stopped at Line No. 3 inside the logear() method.
    Currently we will add valid credentials to observe the real request and response of the application, later on we will bypass both login and otp page.
    
-   [Image of debug started 1]
+   ![](/images/encryption_bypass_part1/19.png)
    
    Now on the right side of source we can observe lot of sub tabs are there, lets understand them:
    
-   [Image of side bar debug 2]
+   ![](/images/encryption_bypass_part1/20.png)
    
    1. Top debugging menus: This is to handle or start stop our debug pause, also to step inside the method or steup out.
         a.) The first play like button is bascially for resume the script excution.
@@ -297,7 +299,7 @@ Even if you highlight any issue to them, the first remidiation they will think a
    
    When we click on third button which is "step in" we can observe it is taking us to fetch the password value #password. As we do not care about how the password will fetch we can directly click on fourth button which is "step out", when we click on "step in" again, it will take us to fetch different value which we do not care again hence click on "step out" once more. Now observe we are at third place call encrypt (from CryptoJS.AES.encrypt) this mean now this CryptoJS is going to be used hence when we click on "step in" now we will move inside aes.js file.
    
-   [Image aes.js]
+   ![](/images/encryption_bypass_part1/21.png)
    
    Now from here we can observe multiple things.
    1. We got our original text as a variable b = 1234 in scope section.
@@ -306,30 +308,29 @@ Even if you highlight any issue to them, the first remidiation they will think a
    4. aes.js is hard to read, so to make it pretty we are going to use one more feature of DevTools is "{}" -> this button will make the JS pretty for you.
    Click on below {} button at the bottom and observe the aes.js is formatted now in readable format. Also, we can observe we are at one ***encrypt: function(b,k,d)*** method, DevTools also help you read the run time value of those arguments i.e. b = "1234", k = "mykey123" etc.
    
-   [Image_aes.js_pretty]
+   ![](/images/encryption_bypass_part1/22.png)
    
    Now click on "step out" button one time. and observe that the code execution is now moved to next line, Line No. 4.
    
-   [Image line no 4.]
+   ![](/images/encryption_bypass_part1/23.png)
    
    Now click on console tab and you can details of variable in console also by calling out those methods or variables.
    
-   [Image_console]
-   
+   ![](/images/encryption_bypass_part1/24.png)
    
    Same way lets observe the encrypted response also and observe its original value.
    
    For this put your debug point at Line No. 10 in logear() method.
    
-   [Image debug point line 10]
+   ![](/images/encryption_bypass_part1/25.png)
    
    Submit your data in the application and click on login and observe in scope we got encrypted data in res variable.
    
-   [Image]
+   ![](/images/encryption_bypass_part1/26.png)
    
    Now type Step in -> Step out -> Step in -> Step out and observe we got decrypted value in variable data2.
    
-   [Image]
+   ![](/images/encryption_bypass_part1/27.png)
    
    The decrypted response of valid credentials is ""{\"status\":1,\"message\":\"Access success\"}"". Now observe that Json data contains two key values, status and message.
    status: We are not sure what is this for.
@@ -342,14 +343,14 @@ Even if you highlight any issue to them, the first remidiation they will think a
    
    Adding debug point at Line no. 10, provided invalid credentials and click on login and observe the invalid response.
    
-   [Image]
+   ![](/images/encryption_bypass_part1/28.png)
    
    The decrypted response of invalid credentials is ""{\"status\":0,\"message\":\"Access Denied\"}"", now when we observe the response in browser we see that we got one message "Acess Denied", and this is the same message which is written here in the json response. Hence we can confirm that what is the use of message parameter. Now for status parameter.
    
    As we have already understood the whole process of logear() method earlier, and we saw there is something condition check is implemented where a == 1, so lets what is a is used for and how it is calculated?
    1. One way to get this is by adding the debug point at Line No. 12 and observe both valid and invalid responses of application.
    
-   [Image]
+   ![](/images/encryption_bypass_part1/29.png)
    
    So we can confirm that status value is the value of a variable and which is compared with 1 and if it is true only that we will redirected to next page which is OTP.php
    
@@ -370,21 +371,21 @@ Even if you highlight any issue to them, the first remidiation they will think a
    1. Bypass using modifying the status value or a value to 1.
    For this we can modify the value of a variable in the scope section of DevTools. Lets add our debug point at Line No. 15 and modify the value of a in scope section from 0 to 1.
    
-   [image]
+   ![](/images/encryption_bypass_part1/30.png)
    
    Observe in browser we are moved to next page OTP.php :))
    
-   [image]
+   ![](/images/encryption_bypass_part1/31.png)
    
    2. By modifying the conditions on client side.
    From source tab just modify the condtion from a==1 to a==0 and press ctrl+s to save it cool done. No need to put any debug point for the same.
    Enter invalid credentials to the application and click on login button and you will go forward to next page OTP.php
    
-   [image]
+   ![](/images/encryption_bypass_part1/32.png)
    
-   [image]
+   ![](/images/encryption_bypass_part1/33.png)
    
-   [image]
+   ![](/images/encryption_bypass_part1/34.png)
    
    
    Now we are on the OTP.php screen, we can bypass the same as well with same process but the encryption method is different than before. 
