@@ -1,7 +1,7 @@
 ---
 layout: "post"
 title: "Client Side Encryption Bypass Part-1"
-date: "2020-01-02 10:56"
+date: "2020-01-01 10:56"
 excerpt: "In this blog we will discuss the extra security layer implemented inside the application which is encryption mechanism. It will be a series of how to break the client side encryption and add our payload to the actual parameter and perform the application security testing."
 comments: false
 ---
@@ -403,6 +403,7 @@ Even if you highlight any issue to them, the first remidiation they will think a
    I enjoyed writing this article and hope that you enjoyed reading it.
    
    In the next part 2 we will discuss about DevTools more and see some cool tricks which help us to find the encryption logic. and see some more example.  
+   
    So Thanks for reading this and stay tune for next part.
    
    ### Reference:
