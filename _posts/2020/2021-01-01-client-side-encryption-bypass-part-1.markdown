@@ -220,7 +220,7 @@ Even if you highlight any issue to them, the first remidiation they will think a
     
     [Image element]
     
-    d.) Want to break encryption? Or Bypass something?
+    d.) Want to break encryption? Or Bypass something? Find the logic.
     
     Lets start with our debugging process:
     
@@ -331,7 +331,7 @@ Even if you highlight any issue to them, the first remidiation they will think a
    
    [Image]
    
-   The decrypted response is ""{\"status\":1,\"message\":\"Access success\"}"" Now observe that Json data contains two key values, status and message.
+   The decrypted response of valid credentials is ""{\"status\":1,\"message\":\"Access success\"}"". Now observe that Json data contains two key values, status and message.
    status: We are not sure what is this for.
    message: This message is also we can verify yet. 
    but lets just keep note of this success response from the application.
@@ -340,26 +340,56 @@ Even if you highlight any issue to them, the first remidiation they will think a
    Email: admin@gmail.com (valid email address)
    password: we will enter wrong password 456789
    
-   Now as we have understood the whole process of logear() method earlier we 
+   Adding debug point at Line no. 10, provided invalid credentials and click on login and observe the invalid response.
+   
+   [Image]
+   
+   The decrypted response of invalid credentials is ""{\"status\":0,\"message\":\"Access Denied\"}"", now when we observe the response in browser we see that we got one message "Acess Denied", and this is the same message which is written here in the json response. Hence we can confirm that what is the use of message parameter. Now for status parameter.
+   
+   As we have already understood the whole process of logear() method earlier, and we saw there is something condition check is implemented where a == 1, so lets what is a is used for and how it is calculated?
+   1. One way to get this is by adding the debug point at Line No. 12 and observe both valid and invalid responses of application.
+   
+   [Image]
+   
+   So we can confirm that status value is the value of a variable and which is compared with 1 and if it is true only that we will redirected to next page which is OTP.php
+   
+   2. Read the logic of logear() method from Line No. 10 to 16 and apply it on json response.
+   
+   ```js
+    10.   var data = JSON.parse(data2);   // data2 = ""{\"status\":0,\"message\":\"Access Denied\"}"" hence data = "{"status":0,"message":"Access Denied"}"
+    11.   var a = data[10];    // a = 0
+    12.   //console.log(data.slice(22,37));
+    13.   $("#message").html(data.slice(23,36));
+    14.   if(a == 1)                       // 0==1  => False and if a=1 and 1==1 ==> true
+    15.     window.location.href="OTP.php"; 
+    16.   },"json");
+   ```
+   
+   So to bypass the Authentication we have to modify the value of status or a from 0 to 1. or else we have to modify the condition check on client side i.e. from a==1 to a==0.
+   
+   1. Bypass using modifying the status value or a value to 1.
+   For this we can modify the value of a variable in the scope section of DevTools. Lets add our debug point at Line No. 15 and modify the value of a in scope section from 0 to 1.
+   
+   [image]
+   
+   Observe in browser we are moved to next page OTP.php :))
+   
+   [image]
+   
+   2. By modifying the conditions on client side.
+   From source tab just modify the condtion from a==1 to a==0 and press ctrl+s to save it cool done. No need to put any debug point for the same.
+   Enter invalid credentials to the application and click on login button and you will go forward to next page OTP.php
+   
+   [image]
+   
+   [image]
+   
+   [image]
    
    
+   Now we are on the OTP.php screen, we can bypass the same as well with same process but the encryption method is different than before. 
+   Take this OTP.php bypass as task and try it out on your own. The lab will be available on docker, you can configure it on your own and try it out.
    
-   
-   
-     
-   
-    
-    
-        
-
-    e.) Find the logic.
-   
-### Key take away:
-
- 1. Reality........
- 
- 2. Obfuscation: 
-
-Thanks for reading!!
-You can follow me on twitter:
-Github: 
+   In the next part 2 we will discuss about DevTools more and see some cool tricks which help us to find the encryption logic. and see some more example.
+   So Thanks for reading this and stay tune for next part.
+  
