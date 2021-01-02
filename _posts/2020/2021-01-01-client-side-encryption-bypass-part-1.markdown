@@ -13,9 +13,9 @@ In this blog we will discuss the extra security layer implemented inside the app
 
 Below is the series of content:
 
-Part 1: Breaking the encryption of web application and bypass OTP.</br>
-Part 2: Some cool magic tricks which helps to find the encryption logic very easily.</br>
-Part 3: Understanding the Logic of encryption and fuzz the parameters.</br>
+Part 1: Breaking the encryption of web application and bypass OTP.
+Part 2: Some cool magic tricks which helps to find the encryption logic very easily.
+Part 3: Understanding the Logic of encryption and fuzz the parameters.
 Their is lot more stay tune for that.
 
 ```
