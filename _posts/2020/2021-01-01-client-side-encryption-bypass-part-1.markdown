@@ -222,10 +222,136 @@ Even if you highlight any issue to them, the first remidiation they will think a
     
     d.) Want to break encryption? Or Bypass something?
     
+    Lets start with our debugging process:
+    
+    Now we have to confirm that the method we found is really used for encryption? it is just a dummy code or used for some other encryption method in the application?
+    
+    One main point which we can observe from ***logear()*** is that the encryption is AES encryption and the key is hardcoded. Hence the same key is going to be used for decryption purpose as well.
+    
+    There are multiple types of debugging method available in DevTools and really all of them are useful. but for this blog we will look into the most common and most used debugging process of DevTools.
+    
+    Lets put our debug point in the source tab inside the ***logear()*** method, Now one question arises is where to put the debug point???
+    well answer is read the code and try to understand from where you can get the most information, like our aim is to break the encryption right? means get the original data before it gets encrypted. hence find your way by putting debug points one by one, this is complete try and error method to find the right place.
+    
+    So here is the snippet of logear() method:
+    
+    ```js
+    
+    1.  function logear(){
+    2.    var mykey = "myKey123";
+    3.    passwordEncryp = CryptoJS.AES.encrypt( $("#password").val(), mykey, {format: CryptoJSAesJson} );
+    4.    $.post("validate.php",{
+    5.    email: $("#email").val()
+    6.    ,password: passwordEncryp.toString()
+    7.   },
+    8.   function(res){
+    9.    var data2 = CryptoJS.AES.decrypt(JSON.stringify(res), mykey, {format: CryptoJSAesJson}).toString(CryptoJS.enc.Utf8);
+    10.   var data = JSON.parse(data2);
+    11.   var a = data[10];    
+    12.   //console.log(data.slice(22,37));
+    13.   $("#message").html(data.slice(23,36));
+    14.   if(a == 1)
+    15.     window.location.href="OTP.php";
+    16.   },"json");
+    17. }
+    
+    ```
+   Now if we try to understand it.
+   
+   Line No. 2: Hardcoded key stored inside mykey variable. </br>
+   Line No. 3: CrytoJS.AES.encrypt method is called which is having 3 arguments data, key, format.</br>
+   Line No. 4 to 6: Request is created and using post method it is send to validate.php in body part.</br>
+   Line No. 8: Function to handle the response. (as we know response is also encrypted).</br>
+   Line No. 9: CryptoJS.AES>decrypt method is called which is having 3 arguments response_data, key, format.</br>
+   Line No. 11 to 13: Some kind of process of slicing the data or clear text response.</br>
+   Line No. 14 to 16: Conditional validation where if a == 1 only than it will change the window location to OTP.php.</br>
+   
+   Once we understood the logic we can put our debug point at Line No. 3 as it contains the encryption method.
+   
+   [Image of debug point at Line 3]
+   
+   Once you have added your debug point, submit the data in the application and click on login button, the process will autometically stopped at Line No. 3 inside the logear() method.
+   Currently we will add valid credentials to observe the real request and response of the application, later on we will bypass both login and otp page.
+   
+   [Image of debug started 1]
+   
+   Now on the right side of source we can observe lot of sub tabs are there, lets understand them:
+   
+   [Image of side bar debug 2]
+   
+   1. Top debugging menus: This is to handle or start stop our debug pause, also to step inside the method or steup out.
+        a.) The first play like button is bascially for resume the script excution.
+        b.) The second button is for step over to the next function call from this current fuction where you are into right now.
+        c.) The third button is we are going to use most which help you step inside the fuction to get some variable value or argument value.
+        d.) The fourth button is for stepping out from the current function you are in.
+        e.) The fifth button is to go step by step (one step at a time).
+        f.) The sixth and seven buttons are for deactivating the breakpoints and pause whenever any exception occurs.
+        
+   2. Watch: This is really useful mainly if the variables are created locally and not setup gobally. Means to get the current value of variable you have to run the application right. so the watch will help you to keep track of variable value whenever it gets changed.
+   
+   3. Call Stack: Just to navigate where you are in the code and in which file.
+   
+   4. Scope: This is most useful section for us. This is the place where we get the current value of all the variables, we can even modify them at run time here. So we will get our original data here in the scope and we can modify it.
+   
+   Now if you have observed in above screen shot that in scope section we got key value as *mykey : "mykey123"*
+   
+   When we click on third button which is "step in" we can observe it is taking us to fetch the password value #password. As we do not care about how the password will fetch we can directly click on fourth button which is "step out", when we click on "step in" again, it will take us to fetch different value which we do not care again hence click on "step out" once more. Now observe we are at third place call encrypt (from CryptoJS.AES.encrypt) this mean now this CryptoJS is going to be used hence when we click on "step in" now we will move inside aes.js file.
+   
+   [Image aes.js]
+   
+   Now from here we can observe multiple things.
+   1. We got our original text as a variable b = 1234 in scope section.
+   2. We got the real file which is responsible for this encryption "the encryption algo." is inside aes.js
+   3. In call stack observe the encrypt is called hence now the encryption is going to happen.
+   4. aes.js is hard to read, so to make it pretty we are going to use one more feature of DevTools is "{}" -> this button will make the JS pretty for you.
+   Click on below {} button at the bottom and observe the aes.js is formatted now in readable format. Also, we can observe we are at one ***encrypt: function(b,k,d)*** method, DevTools also help you read the run time value of those arguments i.e. b = "1234", k = "mykey123" etc.
+   
+   [Image_aes.js_pretty]
+   
+   Now click on "step out" button one time. and observe that the code execution is now moved to next line, Line No. 4.
+   
+   [Image line no 4.]
+   
+   Now click on console tab and you can details of variable in console also by calling out those methods or variables.
+   
+   [Image_console]
+   
+   
+   Same way lets observe the encrypted response also and observe its original value.
+   
+   For this put your debug point at Line No. 10 in logear() method.
+   
+   [Image debug point line 10]
+   
+   Submit your data in the application and click on login and observe in scope we got encrypted data in res variable.
+   
+   [Image]
+   
+   Now type Step in -> Step out -> Step in -> Step out and observe we got decrypted value in variable data2.
+   
+   [Image]
+   
+   The decrypted response is ""{\"status\":1,\"message\":\"Access success\"}"" Now observe that Json data contains two key values, status and message.
+   status: We are not sure what is this for.
+   message: This message is also we can verify yet. 
+   but lets just keep note of this success response from the application.
+   
+   Now lets try the same process again but this time we will provide wrong credentials to application.
+   Email: admin@gmail.com (valid email address)
+   password: we will enter wrong password 456789
+   
+   Now as we have understood the whole process of logear() method earlier we 
+   
+   
+   
+   
+   
+     
+   
     
     
-    
-    
+        
+
     e.) Find the logic.
    
 ### Key take away:
