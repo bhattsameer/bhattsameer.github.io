@@ -1,9 +1,9 @@
 ---
 layout: "post"
 title: "Client Side Encryption Bypass Part-1"
-date: ""
+date: "2020-01-02 10:56"
 excerpt: ""
-comments: true
+comments: false
 ---
 
 ### **TL;DR**
@@ -23,7 +23,7 @@ Debugger is your friend.
 
 Now every financial sector applications i.e. mobile or web, use one more security layer which is encryption mechanism so the attacker who is able to intercept the traffic through any MITM tools can not able to understand the request data. When we do pen-testing we follow some methodology, we have to test each and every parameter and request. Well as we all no attackers don't follow any rules and regulations, when they want to attack they will find a way to do it. So as keeping the mindset of an attacker, we will understand this kind of encryption mechanism, what developer thinks when they implement this? Also, what kind of mistakes they do? Why they feel putting encryption means the application is secure? What makes them think that no one can break their logic? So they hide sensitive information behind the encryption. So keeping all the above maybe some more cases in my mind, I prepared my own ""Debugging methodology"" for this, which I follow when I face this kind of scenario.
 
-### What is JavaScript?
+#### What is JavaScript?
 
 JavaScript is one of the most popular and widely used programming languages in the world right now, still growing more and more, big companies like [Netflix](https://www.netflix.com/in/), [PayPal](https://www.paypal.com/in/home) build an entire application around JavaScript.
 
@@ -33,7 +33,7 @@ For the developers it is used to build stuff but for attacker JavaScript is used
 
 For more please visit: [JavaScript.info](http://javascript.info/)
 
-### What you can do with JavaScript?
+#### What you can do with JavaScript?
 
 As I said JavaScript is everywhere.
 
@@ -46,29 +46,29 @@ Previously JavaScript was only used in browser to build interactive web applicat
 5. Desktop Application.</br>
 6. [Windows95](https://github.com/felixrieseberg/windows95).
 
-### JavaScript vs ECMAScript?
+#### JavaScript vs ECMAScript?
 
 Javascript is a language and [ECMAScript](https://en.wikipedia.org/wiki/ECMAScript) is a scripting-language specification standardized by ECMA International.
 
-### Where does JavaScript code run?
+#### Where does JavaScript code run?
 
 JavaScript engines (V8 for Chrome, spider monkey for Firefox etc.)
 Previously we were only able to run JavaScript inside browser only.
 but later on Node was developed (which is nothing but Javascript engine outside browser).
 
-### Debugging with DevTools:
+#### Debugging with DevTools:
 
 We will not go in the basic's of DevTools, to understand the DevTools you can read this [Blog](https://blittle.github.io/chrome-dev-tools/)
 
 ### Let get into the main topic:
 
-### How the normal request and response structure looks if there is no encryption implemented.
+#### How the normal request and response structure looks if there is no encryption implemented.
 
 Below is the normal request and response structure which shows that normally the parameters are in clear text as there is no encryption is implemented.
 
 ![](/images/encryption_bypass_part1/1.png)
 
-### How the normal request and response structure looks if there is an encryption implemented.
+#### How the normal request and response structure looks if there is an encryption implemented.
 
 ![](/images/encryption_bypass_part1/2.png)
 
@@ -76,13 +76,13 @@ In above screen shot you can see the password parameter is encrypted and the res
 
 So to test the password parameter with our paylaods we have to break the encryption and also to understand the response we have to break the encrypted response as well.
 
-### What developers think?
+#### What developers think?
 
 For developers they usually hide sensitive information inside the encrypted value, as they assume that the encryption means they are secure, no one can break there encryption even if the logic is default one.
 
 Even if you highlight any issue to them, the first remidiation they will think about it encrypt the encrypted data again or encrypt the encryption key kind of chaining and they will claim that no one can break this.
 
-### Breaking and Bypassing encryption:
+#### Breaking and Bypassing encryption:
 
  1. **What?**:
  
@@ -116,9 +116,9 @@ Even if you highlight any issue to them, the first remidiation they will think a
     
     ![](/images/encryption_bypass_part1/10.png)
     
-    **So our aim is to bypass the OTP after breaking the encryption logic.**
+    **So our aim is to bypass the authentication and OTP after breaking the encryption logic.**
  
-    a.) **Understand the application and it's flow.**
+    **a.) Understand the application and it's flow.**
     
     Always first understand the flow of application by using valid credentials (if possible) also try to understand the encryption or the request where the encryption is implemented, so that you can understand how the encryption is getting generated.
     
@@ -161,7 +161,7 @@ Even if you highlight any issue to them, the first remidiation they will think a
     
     ![](/images/encryption_bypass_part1/8.png)
     
-    b.) When you found something, ask yourself is it on client side?
+    **b.) When you found something, ask yourself is it on client side?**
     
     Now the guessing games begins :))
     
@@ -170,7 +170,7 @@ Even if you highlight any issue to them, the first remidiation they will think a
     3. Once the above test case fail we can guess that the encryption logic may somewhere on the client side.
     4. Next to confirm the encryption is on client side, lets look into the Javascript files. 
     
-    c.) Look for all files.
+    **c.) Look for all files.**
     
     From here onward I am going to use DevTools only no burp is required anymore:))
     
@@ -222,7 +222,7 @@ Even if you highlight any issue to them, the first remidiation they will think a
     
     ![](/images/encryption_bypass_part1/17.png)
     
-    d.) Want to break encryption? Or Bypass something? Find the logic.
+    **d.) Want to break encryption? Or Bypass something? Find the logic.**
     
     Lets start with our debugging process:
     
@@ -393,4 +393,10 @@ Even if you highlight any issue to them, the first remidiation they will think a
    
    In the next part 2 we will discuss about DevTools more and see some cool tricks which help us to find the encryption logic. and see some more example.
    So Thanks for reading this and stay tune for next part.
+   
+   ### Reference:
+   
+   https://blittle.github.io/chrome-dev-tools/
+   https://javascript.info
+   https://developers.google.com/web/tools/chrome-devtools
   
