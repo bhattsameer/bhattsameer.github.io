@@ -10,15 +10,13 @@ comments: false
 Hi, this is [Debugger](https://github.com/bhattsameer) ready to debug JavaScript.
 
 In this blog we will discuss the extra security layer implemented inside the application which is **encryption mechanism**. It will be a series of how to break the client side encryption and add our payload to the actual parameter and perform the application security testing. For this series we will use [DevTools](https://developers.google.com/web/tools/chrome-devtools) as our main Tool.
-```
-Below is the series of content:
 
- Part 1: Breaking the encryption of web application and bypass OTP.
- Part 2: Some cool magic tricks which helps to find the encryption logic very easily.
- Part 3: Understanding the Logic of encryption and fuzz the parameters.
- Their is lot more stay tune for that.
+Below is the series of content:  
 
-```
+Part 1: Breaking the encryption of web application and bypass OTP.  
+Part 2: Some cool magic tricks which helps to find the encryption logic very easily.  
+Part 3: Understanding the Logic of encryption and fuzz the parameters.  
+Their is lot more stay tune for that.  
 
 ```
  Debugger is always your BestFriend.
@@ -72,13 +70,13 @@ We will not go in the basic's of DevTools, to understand the DevTools you can re
 
 ### Let get into the main topic:
 
-#### How the normal request and response structure looks if there is no encryption implemented.
+**How the normal request and response structure looks if there is no encryption implemented.**
 
 Below is the normal request and response structure which shows that normally the parameters are in clear text as there is no encryption is implemented.
 
 ![](/images/encryption_bypass_part1/1.png)
 
-#### How the normal request and response structure looks if there is an encryption implemented.
+**How the normal request and response structure looks if there is an encryption implemented.**  
 
 ![](/images/encryption_bypass_part1/2.png)
 
@@ -100,11 +98,11 @@ Even if you highlight any issue to them, the first remidiation they will think a
     
     Most common example is :
     
-    1. **Encrypting the parameters:**
+    1. **Encrypting the parameters:**  
         i.e. some parameters value will get encrypted.
         ![](/images/encryption_bypass_part1/2.png)
         
-    2. **Encrypting the whole body:**
+    2. **Encrypting the whole body:**  
         i.e. whole post data is encrypted, so no one can guess what are the parameters passing through this request. exampl in below observe the response body completely encrypted.
         ![](/images/encryption_bypass_part1/3.png)
  
@@ -155,7 +153,7 @@ Even if you highlight any issue to them, the first remidiation they will think a
     
     i.e. below is error response when we have entered wrong login credentials and also wrong OTP.
     
-    ![](/images/encryption_bypass_part1/9.png)
+    ![](/images/encryption_bypass_part1/9.png)  
     
     ![](/images/encryption_bypass_part1/10.png)
     
@@ -268,16 +266,17 @@ Even if you highlight any issue to them, the first remidiation they will think a
     15.     window.location.href="OTP.php";
     16.   },"json");
     17. }
-    
-    Now if we try to understand it.
-    Line No. 2: Hardcoded key stored inside mykey variable.
-    Line No. 3: CrytoJS.AES.encrypt method is called which is having 3 arguments data, key, format.
-    Line No. 4 to 6: Request is created and using post method it is send to validate.php in body part.
-    Line No. 8: Function to handle the response. (as we know response is also encrypted).
-    Line No. 9: CryptoJS.AES>decrypt method is called which is having 3 arguments response_data, key, format.
-    Line No. 11 to 13: Some kind of process of slicing the data or clear text response.
-    Line No. 14 to 16: Conditional validation where if a == 1 only than it will change the window location to OTP.php.
     ```
+    Now if we try to understand it.  
+    
+    Line No. 2: Hardcoded key stored inside mykey variable.  
+    Line No. 3: CrytoJS.AES.encrypt method is called which is having 3 arguments data, key, format.  
+    Line No. 4 to 6: Request is created and using post method it is send to validate.php in body part.  
+    Line No. 8: Function to handle the response. (as we know response is also encrypted).  
+    Line No. 9: CryptoJS.AES>decrypt method is called which is having 3 arguments response_data, key, format.  
+    Line No. 11 to 13: Some kind of process of slicing the data or clear text response.  
+    Line No. 14 to 16: Conditional validation where if a == 1 only than it will change the window location to OTP.php.  
+    
     
    Once we understood the logic we can put our debug point at Line No. 3 as it contains the encryption method.
    
@@ -292,13 +291,13 @@ Even if you highlight any issue to them, the first remidiation they will think a
    
    ![](/images/encryption_bypass_part1/20.png)
    
-   1. Top debugging menus: This is to handle or start stop our debug pause, also to step inside the method or steup out.
-        a.) The first play like button is bascially for resume the script excution.
-        b.) The second button is for step over to the next function call from this current fuction where you are into right now.
-        c.) The third button is we are going to use most which help you step inside the fuction to get some variable value or argument value.
-        d.) The fourth button is for stepping out from the current function you are in.
-        e.) The fifth button is to go step by step (one step at a time).
-        f.) The sixth and seven buttons are for deactivating the breakpoints and pause whenever any exception occurs.
+   1. Top debugging menus: This is to handle or start stop our debug pause, also to step inside the method or steup out.  
+        a.) The first play like button is bascially for resume the script excution.  
+        b.) The second button is for step over to the next function call from this current fuction where you are into right now.  
+        c.) The third button is we are going to use most which help you step inside the fuction to get some variable value or argument value.  
+        d.) The fourth button is for stepping out from the current function you are in.  
+        e.) The fifth button is to go step by step (one step at a time).  
+        f.) The sixth and seven buttons are for deactivating the breakpoints and pause whenever any exception occurs.  
         
    2. Watch: This is really useful mainly if the variables are created locally and not setup gobally. Means to get the current value of variable you have to run the application right. so the watch will help you to keep track of variable value whenever it gets changed.
    
@@ -312,11 +311,11 @@ Even if you highlight any issue to them, the first remidiation they will think a
    
    ![](/images/encryption_bypass_part1/21.png)
    
-   Now from here we can observe multiple things.
-   1. We got our original text as a variable b = 1234 in scope section.
-   2. We got the real file which is responsible for this encryption "the encryption algo." is inside aes.js
-   3. In call stack observe the encrypt is called hence now the encryption is going to happen.
-   4. aes.js is hard to read, so to make it pretty we are going to use one more feature of DevTools is "{}" -> this button will make the JS pretty for you.
+   Now from here we can observe multiple things.  
+   1. We got our original text as a variable b = 1234 in scope section.  
+   2. We got the real file which is responsible for this encryption "the encryption algo." is inside aes.js  
+   3. In call stack observe the encrypt is called hence now the encryption is going to happen.  
+   4. aes.js is hard to read, so to make it pretty we are going to use one more feature of DevTools is "{}" -> this button will make the JS pretty for you.  
    Click on below {} button at the bottom and observe the aes.js is formatted now in readable format. Also, we can observe we are at one ***encrypt: function(b,k,d)*** method, DevTools also help you read the run time value of those arguments i.e. b = "1234", k = "mykey123" etc.
    
    ![](/images/encryption_bypass_part1/22.png)
@@ -343,14 +342,14 @@ Even if you highlight any issue to them, the first remidiation they will think a
    
    ![](/images/encryption_bypass_part1/27.png)
    
-   The decrypted response of valid credentials is ""{\"status\":1,\"message\":\"Access success\"}"". Now observe that Json data contains two key values, status and message.
-   status: We are not sure what is this for.
-   message: This message is also we can verify yet. 
-   but lets just keep note of this success response from the application.
+   The decrypted response of valid credentials is ""{\"status\":1,\"message\":\"Access success\"}"". Now observe that Json data contains two key values, status and message.  
+   status: We are not sure what is this for.  
+   message: This message is also we can verify yet.  
+   but lets just keep note of this success response from the application.  
    
-   Now lets try the same process again but this time we will provide wrong credentials to application.
-   Email: admin@gmail.com (valid email address)
-   password: we will enter wrong password 456789
+   Now lets try the same process again but this time we will provide wrong credentials to application.  
+   Email: admin@gmail.com (valid email address)  
+   password: we will enter wrong password 456789  
    
    Adding debug point at Line no. 10, provided invalid credentials and click on login and observe the invalid response.
    
@@ -358,7 +357,7 @@ Even if you highlight any issue to them, the first remidiation they will think a
    
    The decrypted response of invalid credentials is ""{\"status\":0,\"message\":\"Access Denied\"}"", now when we observe the response in browser we see that we got one message "Acess Denied", and this is the same message which is written here in the json response. Hence we can confirm that what is the use of message parameter. Now for status parameter.
    
-   As we have already understood the whole process of logear() method earlier, and we saw there is something condition check is implemented where a == 1, so lets what is a is used for and how it is calculated?
+   As we have already understood the whole process of logear() method earlier, and we saw there is something condition check is implemented where a == 1, so lets what is a is used for and how it is calculated?  
    1. One way to get this is by adding the debug point at Line No. 12 and observe both valid and invalid responses of application.
    
    ![](/images/encryption_bypass_part1/29.png)
@@ -379,7 +378,7 @@ Even if you highlight any issue to them, the first remidiation they will think a
    
    So to bypass the Authentication we have to modify the value of status or a from 0 to 1. or else we have to modify the condition check on client side i.e. from a==1 to a==0.
    
-   1. Bypass using modifying the status value or a value to 1.
+   1. Bypass using modifying the status value or a value to 1.  
    For this we can modify the value of a variable in the scope section of DevTools. Lets add our debug point at Line No. 15 and modify the value of a in scope section from 0 to 1.
    
    ![](/images/encryption_bypass_part1/30.png)
@@ -388,7 +387,7 @@ Even if you highlight any issue to them, the first remidiation they will think a
    
    ![](/images/encryption_bypass_part1/31.png)
    
-   2. By modifying the conditions on client side.
+   2. By modifying the conditions on client side.  
    From source tab just modify the condtion from a==1 to a==0 and press ctrl+s to save it cool done. No need to put any debug point for the same.
    Enter invalid credentials to the application and click on login button and you will go forward to next page OTP.php
    
@@ -399,17 +398,15 @@ Even if you highlight any issue to them, the first remidiation they will think a
    ![](/images/encryption_bypass_part1/34.png)
    
    
-   Now we are on the OTP.php screen, we can bypass the same as well with same process but the encryption method is different than before. 
+   Now we are on the OTP.php screen, we can bypass the same as well with same process but the encryption method is different than before.  
    Take this OTP.php bypass as task and try it out on your own. The lab will be available on docker, you can configure it on your own and try it out.
    
-   In the next part 2 we will discuss about DevTools more and see some cool tricks which help us to find the encryption logic. and see some more example.
+   In the next part 2 we will discuss about DevTools more and see some cool tricks which help us to find the encryption logic. and see some more example.  
    So Thanks for reading this and stay tune for next part.
    
    ### Reference:
    
-   https://blittle.github.io/chrome-dev-tools/
-   
-   https://javascript.info
-   
-   https://developers.google.com/web/tools/chrome-devtools
+   https://blittle.github.io/chrome-dev-tools/  
+   https://javascript.info  
+   https://developers.google.com/web/tools/chrome-devtools  
   
