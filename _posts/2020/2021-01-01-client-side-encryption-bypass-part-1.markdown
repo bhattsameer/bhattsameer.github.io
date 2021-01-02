@@ -42,17 +42,12 @@ As I said JavaScript is everywhere.
 
 Previously JavaScript was only used in browser to build interactive web application, later with the support of huge community and companies i.e. Google and Facebook, this day's you can build a complete -
 
-1. Web/Mobile applications.
-
-2. Real-time networking apps (chats, video streaming).
-
-3. Command line tools.
-
-4. Games.
-
-5. Desktop Application.
-
-6. [Windows95](https://github.com/felixrieseberg/windows95).
+1. Web/Mobile applications.  
+2. Real-time networking apps (chats, video streaming).  
+3. Command line tools.  
+4. Games.  
+5. Desktop Application.  
+6. [Windows95](https://github.com/felixrieseberg/windows95).  
 
 #### JavaScript vs ECMAScript?
 
@@ -60,8 +55,8 @@ Javascript is a language and [ECMAScript](https://en.wikipedia.org/wiki/ECMAScri
 
 #### Where does JavaScript code run?
 
-JavaScript engines (V8 for Chrome, spider monkey for Firefox etc.)
-Previously we were only able to run JavaScript inside browser only.
+JavaScript engines (V8 for Chrome, spider monkey for Firefox etc.)  
+Previously we were only able to run JavaScript inside browser only.  
 but later on Node was developed (which is nothing but Javascript engine outside browser).
 
 #### Debugging with DevTools:
@@ -99,11 +94,11 @@ Even if you highlight any issue to them, the first remidiation they will think a
     Most common example is :
     
     1. **Encrypting the parameters:**  
-        i.e. some parameters value will get encrypted.
+        i.e. some parameters value will get encrypted.  
         ![](/images/encryption_bypass_part1/2.png)
         
     2. **Encrypting the whole body:**  
-        i.e. whole post data is encrypted, so no one can guess what are the parameters passing through this request. exampl in below observe the response body completely encrypted.
+        i.e. whole post data is encrypted, so no one can guess what are the parameters passing through this request. exampl in below observe the response body completely encrypted.  
         ![](/images/encryption_bypass_part1/3.png)
  
  2. **How?**:
