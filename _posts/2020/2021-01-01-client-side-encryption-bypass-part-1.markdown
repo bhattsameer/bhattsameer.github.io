@@ -2,12 +2,13 @@
 layout: "post"
 title: "Client Side Encryption Bypass Part-1"
 date: "2020-01-02 10:56"
-excerpt: ""
+excerpt: "In this blog we will discuss the extra security layer implemented inside the application which is **encryption mechanism**. It will be a series of how to break the client side encryption and add our payload to the actual parameter and perform the application security testing."
 comments: false
 ---
 
 ### **TL;DR**
 Hi, this is [Debugger](https://github.com/bhattsameer) ready to debug JavaScript.
+
 In this blog we will discuss the extra security layer implemented inside the application which is **encryption mechanism**. It will be a series of how to break the client side encryption and add our payload to the actual parameter and perform the application security testing. For this series we will use [DevTools](https://developers.google.com/web/tools/chrome-devtools) as our main Tool.
 
 Below is the series of content:
@@ -18,7 +19,7 @@ Part 3: Understanding the Logic of encryption and fuzz the parameters.</br>
 Their is lot more stay tune for that.
 
 ```
-Debugger is always your BestFriend.
+ Debugger is always your BestFriend.
 ```
 
 ### Introduction
@@ -41,11 +42,16 @@ As I said JavaScript is everywhere.
 
 Previously JavaScript was only used in browser to build interactive web application, later with the support of huge community and companies i.e. Google and Facebook, this day's you can build a complete -
 
-1. Web/Mobile applications. </br>
-2. Real-time networking apps (chats, video streaming).</br>
-3. Command line tools.</br>
-4. Games.</br>
-5. Desktop Application.</br>
+1. Web/Mobile applications.
+
+2. Real-time networking apps (chats, video streaming).
+
+3. Command line tools.
+
+4. Games.
+
+5. Desktop Application.
+
 6. [Windows95](https://github.com/felixrieseberg/windows95).
 
 #### JavaScript vs ECMAScript?
@@ -88,21 +94,23 @@ Even if you highlight any issue to them, the first remidiation they will think a
 
  1. **What?**:
  
-    As there are multiple ways of encryption can be implemented on request data.</br>
+    As there are multiple ways of encryption can be implemented on request data.
+    
     Most common example is :
     
     1. **Encrypting the parameters:**
-        i.e. some parameters value will get encrypted.</br>
+        i.e. some parameters value will get encrypted.
         ![](/images/encryption_bypass_part1/2.png)
         
     2. **Encrypting the whole body:**
-        i.e. whole post data is encrypted, so no one can guess what are the parameters passing through this request. exampl in below observe the response body completely encrypted.</br>
+        i.e. whole post data is encrypted, so no one can guess what are the parameters passing through this request. exampl in below observe the response body completely encrypted.
         ![](/images/encryption_bypass_part1/3.png)
  
  2. **How?**:
  
-    There are lot of ways to break the encryption, but below are the steps which I personally follow to find the logic and break the encryption.</br>
-    We will understand below steps with one example:</br>
+    There are lot of ways to break the encryption, but below are the steps which I personally follow to find the logic and break the encryption.
+    
+    We will understand below steps with one example:
     
     I have prepared one demo application which helps us to understand the process, you can get the docker version of it from this [link](), once you are done with the setup please continue for the next.
     
@@ -262,13 +270,19 @@ Even if you highlight any issue to them, the first remidiation they will think a
     ```
    Now if we try to understand it.
    
-   Line No. 2: Hardcoded key stored inside mykey variable. </br>
-   Line No. 3: CrytoJS.AES.encrypt method is called which is having 3 arguments data, key, format.</br>
-   Line No. 4 to 6: Request is created and using post method it is send to validate.php in body part.</br>
-   Line No. 8: Function to handle the response. (as we know response is also encrypted).</br>
-   Line No. 9: CryptoJS.AES>decrypt method is called which is having 3 arguments response_data, key, format.</br>
-   Line No. 11 to 13: Some kind of process of slicing the data or clear text response.</br>
-   Line No. 14 to 16: Conditional validation where if a == 1 only than it will change the window location to OTP.php.</br>
+   Line No. 2: Hardcoded key stored inside mykey variable.
+   
+   Line No. 3: CrytoJS.AES.encrypt method is called which is having 3 arguments data, key, format.
+   
+   Line No. 4 to 6: Request is created and using post method it is send to validate.php in body part.
+   
+   Line No. 8: Function to handle the response. (as we know response is also encrypted).
+   
+   Line No. 9: CryptoJS.AES>decrypt method is called which is having 3 arguments response_data, key, format.
+   
+   Line No. 11 to 13: Some kind of process of slicing the data or clear text response.
+   
+   Line No. 14 to 16: Conditional validation where if a == 1 only than it will change the window location to OTP.php.
    
    Once we understood the logic we can put our debug point at Line No. 3 as it contains the encryption method.
    
