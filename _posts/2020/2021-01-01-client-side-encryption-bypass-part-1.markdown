@@ -47,7 +47,8 @@ Previously JavaScript was only used in browser to build interactive web applicat
 3. Command line tools.  
 4. Games.  
 5. Desktop Application.  
-6. [Windows95](https://github.com/felixrieseberg/windows95).  
+6. [Windows95](https://github.com/felixrieseberg/windows95).    
+  
 
 #### JavaScript vs ECMAScript?
 
@@ -395,6 +396,11 @@ Even if you highlight any issue to them, the first remidiation they will think a
    
    Now we are on the OTP.php screen, we can bypass the same as well with same process but the encryption method is different than before.  
    Take this OTP.php bypass as task and try it out on your own. The lab will be available on docker, you can configure it on your own and try it out.
+   
+   ### Conclusion:
+   This blog was to give very basic idea and a kick start of how to not stop yourself when you see any encryption in the web application and try out to bypass the same and find all the possible bugs. The real world of encryption is sure lot more complex than this one but a good kick start is always needed to fly higher.:))
+   
+   I enjoyed writing this article and hope that you enjoyed reading it.
    
    In the next part 2 we will discuss about DevTools more and see some cool tricks which help us to find the encryption logic. and see some more example.  
    So Thanks for reading this and stay tune for next part.
