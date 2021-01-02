@@ -1,7 +1,7 @@
 ---
 layout: "post"
 title: "Client Side Encryption Bypass Part-1"
-date: "2020-01-01 10:56"
+date: "2021-01-01 10:56"
 excerpt: "In this blog we will discuss the extra security layer implemented inside the application which is encryption mechanism. It will be a series of how to break the client side encryption and add our payload to the actual parameter and perform the application security testing."
 comments: false
 ---
@@ -397,7 +397,8 @@ Even if you highlight any issue to them, the first remidiation they will think a
    Now we are on the OTP.php screen, we can bypass the same as well with same process but the encryption method is different than before.  
    Take this OTP.php bypass as task and try it out on your own. The lab will be available on docker, you can configure it on your own and try it out.
    
-   ### Conclusion:
+### Conclusion:
+
    This blog was to give very basic idea and a kick start of how to not stop yourself when you see any encryption in the web application and try out to bypass the same and find all the possible bugs. The real world of encryption is sure lot more complex than this one but a good kick start is always needed to fly higher.:))
    
    I enjoyed writing this article and hope that you enjoyed reading it.
