@@ -10,13 +10,15 @@ comments: false
 Hi, this is [Debugger](https://github.com/bhattsameer) ready to debug JavaScript.
 
 In this blog we will discuss the extra security layer implemented inside the application which is **encryption mechanism**. It will be a series of how to break the client side encryption and add our payload to the actual parameter and perform the application security testing. For this series we will use [DevTools](https://developers.google.com/web/tools/chrome-devtools) as our main Tool.
-
+```
 Below is the series of content:
 
-Part 1: Breaking the encryption of web application and bypass OTP.
-Part 2: Some cool magic tricks which helps to find the encryption logic very easily.
-Part 3: Understanding the Logic of encryption and fuzz the parameters.
-Their is lot more stay tune for that.
+ Part 1: Breaking the encryption of web application and bypass OTP.
+ Part 2: Some cool magic tricks which helps to find the encryption logic very easily.
+ Part 3: Understanding the Logic of encryption and fuzz the parameters.
+ Their is lot more stay tune for that.
+
+```
 
 ```
  Debugger is always your BestFriend.
@@ -267,23 +269,16 @@ Even if you highlight any issue to them, the first remidiation they will think a
     16.   },"json");
     17. }
     
+    Now if we try to understand it.
+    Line No. 2: Hardcoded key stored inside mykey variable.
+    Line No. 3: CrytoJS.AES.encrypt method is called which is having 3 arguments data, key, format.
+    Line No. 4 to 6: Request is created and using post method it is send to validate.php in body part.
+    Line No. 8: Function to handle the response. (as we know response is also encrypted).
+    Line No. 9: CryptoJS.AES>decrypt method is called which is having 3 arguments response_data, key, format.
+    Line No. 11 to 13: Some kind of process of slicing the data or clear text response.
+    Line No. 14 to 16: Conditional validation where if a == 1 only than it will change the window location to OTP.php.
     ```
-   Now if we try to understand it.
-   
-   Line No. 2: Hardcoded key stored inside mykey variable.
-   
-   Line No. 3: CrytoJS.AES.encrypt method is called which is having 3 arguments data, key, format.
-   
-   Line No. 4 to 6: Request is created and using post method it is send to validate.php in body part.
-   
-   Line No. 8: Function to handle the response. (as we know response is also encrypted).
-   
-   Line No. 9: CryptoJS.AES>decrypt method is called which is having 3 arguments response_data, key, format.
-   
-   Line No. 11 to 13: Some kind of process of slicing the data or clear text response.
-   
-   Line No. 14 to 16: Conditional validation where if a == 1 only than it will change the window location to OTP.php.
-   
+    
    Once we understood the logic we can put our debug point at Line No. 3 as it contains the encryption method.
    
    ![](/images/encryption_bypass_part1/18.png)
