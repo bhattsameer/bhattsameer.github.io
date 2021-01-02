@@ -9,16 +9,18 @@ comments: false
 ### **TL;DR**
 Hi, this is [Debugger](https://github.com/bhattsameer) ready to debug JavaScript.
 In this blog we will discuss the extra security layer implemented inside the application which is **encryption mechanism**. It will be a series of how to break the client side encryption and add our payload to the actual parameter and perform the application security testing. For this series we will use [DevTools](https://developers.google.com/web/tools/chrome-devtools) as our main Tool.
+
 Below is the series of content:
 
 Part 1: Breaking the encryption of web application and bypass OTP.</br>
 Part 2: Some cool magic tricks which helps to find the encryption logic very easily.</br>
 Part 3: Understanding the Logic of encryption and fuzz the parameters.</br>
-their is lot more stay tune for that.
+Their is lot more stay tune for that.
 
 ```
-Debugger is your friend.
+Debugger is always your BestFriend.
 ```
+
 ### Introduction
 
 Now every financial sector applications i.e. mobile or web, use one more security layer which is encryption mechanism so the attacker who is able to intercept the traffic through any MITM tools can not able to understand the request data. When we do pen-testing we follow some methodology, we have to test each and every parameter and request. Well as we all no attackers don't follow any rules and regulations, when they want to attack they will find a way to do it. So as keeping the mindset of an attacker, we will understand this kind of encryption mechanism, what developer thinks when they implement this? Also, what kind of mistakes they do? Why they feel putting encryption means the application is secure? What makes them think that no one can break their logic? So they hide sensitive information behind the encryption. So keeping all the above maybe some more cases in my mind, I prepared my own ""Debugging methodology"" for this, which I follow when I face this kind of scenario.
@@ -397,6 +399,8 @@ Even if you highlight any issue to them, the first remidiation they will think a
    ### Reference:
    
    https://blittle.github.io/chrome-dev-tools/
+   
    https://javascript.info
+   
    https://developers.google.com/web/tools/chrome-devtools
   
