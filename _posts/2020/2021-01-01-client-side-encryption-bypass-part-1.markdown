@@ -152,7 +152,7 @@ Even if you highlight any issue to them, the first remidiation they will think a
     
     ![](/images/encryption_bypass_part1/10.png)
     
-    First index.php will invoke which redirect to Validate.php and that validate.php will contains our email and encrypted password as parameter and in response we will get encrypted data.
+    First login.php will invoke which redirect to Validate.php and that validate.php will contains our email and encrypted password as parameter and in response we will get encrypted data.
     
     Post we will get OTP.php page where we need to fill up our OTP, and when we click on submit it will redirect to otpvalidate.php and that otpvalidate will contains our otp in encrypted format and in response we will get encrypted data.
     
@@ -165,21 +165,57 @@ Even if you highlight any issue to them, the first remidiation they will think a
     
     1. As we have seen the response is in encrypted format but in browser we will get some response in clear text i.e. when the data is invalid we are getting "access denied", so lets assume that the "access denied" is there in the encrypted response hence somewhere in the client side it's got decrypted and we got the string value as an output. This will be our first guess that decryption logic is present in the client side somewhere.
     2. Next we can start with the OTP parameter, just copy that parameter value and use burp search utility and search if kind of same encrypted value you will get in any of the response, this is just a case to test if server is sending encrypted value to client side first and in next request the same encrypted value is getting used or not. The same can be done by observing every request body and response body for encrypted data.
-    3. Once the above test case fail we can guess that the encryption logic somewhere in the client side.
+    3. Once the above test case fail we can guess that the encryption logic may somewhere on the client side.
     4. Next to confirm the encryption is on client side, lets look into the Javascript files. 
     
     c.) Look for all files.
     
-    From here I am going to use DevTool only no burp is required anymore:))
+    From here onward I am going to use DevTools only no burp is required anymore:))
     
-    We are using chrome DevTool only as it provides the modification of values at run time also the snippet is the best:))
+    We are using chrome DevTools only as it provides the modification of values at run time so you can modify the value of parameters before it gets encrypted Also, the snippet feature of it is the best:))
     
+    First of all, we'll have to open up the DevTools. There are multiple ways to do that:
+    - Click on F12 to open it up.
+    - Right click on mouse and navigate to inspect element.
+    - Open it up from Developer tools section from browser settings.
     
+    Image 
+   
+    Here in this blog, we will only talk about:
+    
+    1. Element: Element section contains the DOM Tree of the page you are viewing. As you hover over elements in the DOM tree, they will automatically highlight on the page.
+    2. Console: It is used to run the your JavaScript code.
+    3. Sources: This is the most powerful and useful feature of DevTools. All the sources called or used by the application at that moment can be found here as a source tree of application.
+    
+    We will talk about other tabs later on in the series.
+    
+    As we know the logic part will be written as a JavaScript, hence we can assume that the encryption logic is also somewhere in the JavaScript file. This is not the only case some time the JS code is used inside the same file using <script> tag.
+  
+    To get the list of source in DevTools navigate to sources tab and observe all the files.
+    
+    Image of source tab
+    
+    One way to indentify the logic is to read the all JS files and logic's used inside the application and understand it. But this process is really take out lot of your time and also sometimes the code is obfuscated and also it is very lengthy as well.
+    So one easy way to find the logic is using keyword based search, in source tab click **Ctrl+Shift+f** and you will get one search bar, this is a global search feature of Chrome DevTools, by which you can search the text in all the files listed there in source tab.
+    
+    Some of the best keywords you can search for:
+    encrypt
+    crypt
+    OTP (As the otp parameter is having encrypted value)
+    password (As the password field is having encrypted value)
+    RSA (Encryption type) 
+    AES (Encryption type)
+    key
+    
+    Once you search for the keyword you will get the result and when you click one of them you will be autometically redirected to that specific file and the line number
     
     d.) Want to break encryption? Or Bypass something?
     
+    
+    
+    
     e.) Find the logic.
-  
+   
 ### Key take away:
 
  1. Reality........
