@@ -2,21 +2,21 @@
 layout: "post"
 title: "Client Side Encryption Bypass Part-1"
 date: "2021-01-01 10:56"
-excerpt: "In this blog we will discuss the extra security layer implemented inside the application which is encryption mechanism. It will be a series of how to break the client side encryption and add our payload to the actual parameter and perform the application security testing."
+excerpt: "In this blog we will discuss the extra security layer implemented inside the application - encryption mechanism. It will be a series of how to break the client side encryption, add payload to the actual parameter and perform the application security testing."
 comments: false
 ---
 
 ### **TL;DR**
 Hi, this is [Debugger](https://github.com/bhattsameer) ready to debug JavaScript.
 
-In this blog we will discuss the extra security layer implemented inside the application which is **encryption mechanism**. It will be a series of how to break the client side encryption and add our payload to the actual parameter and perform the application security testing. For this series we will use [DevTools](https://developers.google.com/web/tools/chrome-devtools) as our main Tool.
+In this blog we will discuss the extra security layer implemented inside the application - **encryption mechanism**. It will be a series of how to break the client side encryption, add payload to the actual parameter and perform the application security testing. For this series, we will use [DevTools](https://developers.google.com/web/tools/chrome-devtools) as our main Tool.
 
-Below is the series of content:  
+Series breakdown in parts:  
 
 Part 1: Breaking the encryption of web application and bypass OTP.  
-Part 2: Some cool magic tricks which helps to find the encryption logic very easily.  
+Part 2: Some cool magic tricks which helps in finding the encryption logic easily.  
 Part 3: Understanding the Logic of encryption and fuzz the parameters.  
-Their is lot more stay tune for that.  
+There is a lot more, stay tuned!  
 
 ```
  Debugger is always your BestFriend.
@@ -24,29 +24,30 @@ Their is lot more stay tune for that.
 
 ### Introduction
 
-Now every financial sector applications i.e. mobile or web, use one more security layer which is encryption mechanism so the attacker who is able to intercept the traffic through any MITM tools can not able to understand the request data. When we do pen-testing we follow some methodology, we have to test each and every parameter and request. Well as we all no attackers don't follow any rules and regulations, when they want to attack they will find a way to do it. So as keeping the mindset of an attacker, we will understand this kind of encryption mechanism, what developer thinks when they implement this? Also, what kind of mistakes they do? Why they feel putting encryption means the application is secure? What makes them think that no one can break their logic? So they hide sensitive information behind the encryption. So keeping all the above maybe some more cases in my mind, I prepared my own ""Debugging methodology"" for this, which I follow when I face this kind of scenario.
+Now a days, every financial sector applications i.e. mobile or web, use one or more encryption security layer(s) so that if an attacker, who is able to intercept the traffic through any MITM tools, can't understand the request data. When we do pen-testing we follow certain methodology, we have to test each and every parameter and request. As we all know, attackers don't follow any rules and regulations. When they want to attack they will find a way to do it. Keeping in mind  the mindset of an attacker, we will try to understand- what developers are actually trying to accomplish when implementing encryption? Also, what kind of mistakes they make? Why implementing encryption means to them that the application will be secure? What makes them think that none can break their logic? So they hide sensitive information behind the encryption. 
+Keeping the aforementioned questions in check with few more cases, I have prepared my own ""Debugging methodology"" which I follow when I am faced with such scenarios.
 
 #### What is JavaScript?
 
-JavaScript is one of the most popular and widely used programming languages in the world right now, still growing more and more, big companies like [Netflix](https://www.netflix.com/in/), [PayPal](https://www.paypal.com/in/home) build an entire application around JavaScript.
+JavaScript is one of the most popular and widely used programming languages in the world right now, still growing everyday, big companies like [Netflix](https://www.netflix.com/in/), [PayPal](https://www.paypal.com/in/home) build an entire application around JavaScript.
 
 JavaScript is everywhere.
 
-For the developers it is used to build stuff but for attacker JavaScript is used for breaking stuff.
+For the developers, it is used to build stuff but for an attacker JavaScript is used for breaking stuff.
 
-For more please visit: [JavaScript.info](http://javascript.info/)
+For more, please visit: [JavaScript.info](http://javascript.info/)
 
-#### What you can do with JavaScript?
+#### What can you do with JavaScript?
 
-As I said JavaScript is everywhere.
+As I mentioned earlier, JavaScript is everywhere.
 
-Previously JavaScript was only used in browser to build interactive web application, later with the support of huge community and companies i.e. Google and Facebook, this day's you can build a complete -
+Previously JavaScript was only used in browser to build interactive web application, later with the support of huge communities and companies i.e. Google and Facebook you can now build complete -
 
 1. Web/Mobile applications.  
 2. Real-time networking apps (chats, video streaming).  
 3. Command line tools.  
 4. Games.  
-5. Desktop Application.  
+5. Desktop Applications.  
 6. [Windows95](https://github.com/felixrieseberg/windows95).    
   
 
@@ -57,85 +58,82 @@ Javascript is a language and [ECMAScript](https://en.wikipedia.org/wiki/ECMAScri
 #### Where does JavaScript code run?
 
 JavaScript engines (V8 for Chrome, spider monkey for Firefox etc.)  
-Previously we were only able to run JavaScript inside browser only.  
-but later on Node was developed (which is nothing but Javascript engine outside browser).
+Earlier one could only run JavaScript inside browser, but later on Node was developed (which is a Javascript engine outside browser).
 
 #### Debugging with DevTools:
 
-We will not go in the basic's of DevTools, to understand the DevTools you can read this [Blog](https://blittle.github.io/chrome-dev-tools/)
+We will not go into the basics of DevTools. However to understand the DevTools, you can go through this: [Blog](https://blittle.github.io/chrome-dev-tools/)
 
 ### Let get into the main topic:
 
-**How the normal request and response structure looks if there is no encryption implemented.**
+**How does a normal request and response structure looks like without encryption?**
 
-Below is the normal request and response structure which shows that normally the parameters are in clear text as there is no encryption is implemented.
+Below is the normal request and response structure which shows that normally the parameters are in clear text when the encryption isn't implemented.
 
 ![](/images/encryption_bypass_part1/1.png)
 
-**How the normal request and response structure looks if there is an encryption implemented.**  
+**How does a normal request and response structure looks like with encryption?**  
 
 ![](/images/encryption_bypass_part1/2.png)
 
-In above screen shot you can see the password parameter is encrypted and the response as well.
+In the screen shot above, you can see the password parameter is encrypted and so is the response.
 
-So to test the password parameter with our paylaods we have to break the encryption and also to understand the response we have to break the encrypted response as well.
+So to test the password parameter with our payloads, we will be required to break the encryption including the response's too.
 
 #### What developers think?
 
-For developers they usually hide sensitive information inside the encrypted value, as they assume that the encryption means they are secure, no one can break there encryption even if the logic is default one.
+Developers usually use enctyption to hide sensitive information from the user. They assume that with encryption implemented will preserve the confidentiality and integrity of the data, before someone breaks it!
 
-Even if you highlight any issue to them, the first remidiation they will think about it encrypt the encrypted data again or encrypt the encryption key kind of chaining and they will claim that no one can break this.
+Sometimes they may use multiple encryption techniques on the same piece of data, which just adds to the more processing power and complexity. Adding more layers doesn't ensure the safety of the data.
 
 #### Breaking and Bypassing encryption:
 
  1. **What?**:
  
-    As there are multiple ways of encryption can be implemented on request data.
-    
-    Most common example is :
+    There are many ways to implement encryption on data. Some of the common usage examples are:
     
     1. **Encrypting the parameters:**  
         i.e. some parameters value will get encrypted.  
         ![](/images/encryption_bypass_part1/2.png)
         
     2. **Encrypting the whole body:**  
-        i.e. whole post data is encrypted, so no one can guess what are the parameters passing through this request. exampl in below observe the response body completely encrypted.  
+        i.e. whole of the post data is encrypted, so no one can guess what are the parameters are being passed through this request. Observe in the screenshot below that the response body is completely encrypted.  
         ![](/images/encryption_bypass_part1/3.png)
  
  2. **How?**:
  
     There are lot of ways to break the encryption, but below are the steps which I personally follow to find the logic and break the encryption.
     
-    We will understand below steps with one example:
+    We will try to understand by a step-by-step example:
     
-    I have prepared one demo application which helps us to understand the process, you can get the docker version of it from this [link](), once you are done with the setup please continue for the next.
+    I have prepared one demo application which helps you to understand the process, you can get the docker version of it from: [link](), once you are done with the setup, continue for the next.
     
     So we have one web application which asks for user email and password for authentication.
     
     ![](/images/encryption_bypass_part1/4.png)
     
-    once we entered correct details it will send an OTP to registered mobile number and email address.
+    once we enter correct details it will send an OTP to registered mobile number and email address.
     
     ![](/images/encryption_bypass_part1/6.png)
     
-    When you provide valid OTP you can log in, else you will get "Access Denied".
+    When you provide valid OTP you are successfully logged in, if not, you will get "Access Denied" message.
     
     ![](/images/encryption_bypass_part1/10.png)
     
-    **So our aim is to bypass the authentication and OTP after breaking the encryption logic.**
+    **So, the aim is to bypass the authentication and OTP after breaking the encryption logic.**
  
-    **a.) Understand the application and it's flow.**
+    **a.) Understanding the application and it's flow.**
     
     Always first understand the flow of application by using valid credentials (if possible) also try to understand the encryption or the request where the encryption is implemented, so that you can understand how the encryption is getting generated.
     
-    Mainly focus on all the requests which triggers when you click on the submit button or interact with the application.
+    Mainly focus on all the requests which are triggered when you click on the submit button or interact with the application.
     
-    Once you will identify that what really you wanted to break, is it a parameter which is encrypted? or the whole request body?
-    great you are good to go than.
+    Once you have identifed that move on with trying to break it. is it a parameter which is encrypted? or the whole request body?
+    great you are good to go then.
     
-    For this step I am hopping you are already familier with [**burpsuite tool**](https://portswigger.net/burp) but it is not compulsory as we are just using burp to understand the request structure same we can do with DevTools Network option as well.
+    For this step I am hoping you are already familier with [**burpsuite tool**](https://portswigger.net/burp) but it is not compulsory as we are just using burp to understand the request structure. You can also do it with DevTools Network option as well.
     
-    Lets intercept the login request first and observe the request and response structure.
+    Let's intercept the login request first and observe the request and response structure.
         
     ![](/images/encryption_bypass_part1/5.png)
         
@@ -399,19 +397,19 @@ Even if you highlight any issue to them, the first remidiation they will think a
    
 ### Conclusion:
 
-   This blog was to give very basic idea and a kick start of how to not stop yourself when you see any encryption in the web application and try out to bypass the same and find all the possible bugs. The real world of encryption is sure lot more complex than this one but a good kick start is always needed to fly higher.:))
+   This blog was to help you with the basic idea and a kick-start of how to proceed when met with such scenario, bypassing the same to find all the possible bugs hidden. The real world of encryption is sure lot more complex than this one but a good kick-start is always needed to fly higher.:))
    
    I enjoyed writing this article and hope that you enjoyed reading it.
    
-   In the next part 2 we will discuss about DevTools more and see some cool tricks which help us to find the encryption logic. and see some more example.  
+   In part 2, we will discuss more about DevTools and see some cool tricks which will help you to find the encryption logic. We will go through some more examples.   
    
-   So Thanks for reading this and stay tune for next part.
+   Thank you for your time and stay tuned for more!
    
    ### Reference:
    
    https://blittle.github.io/chrome-dev-tools/  
    https://javascript.info  
    https://developers.google.com/web/tools/chrome-devtools  
-   
+     
    [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbhattsameer.github.io%2F2021%2F01%2F01%2Fclient-side-encryption-bypass-part-1.html&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Visitors&edge_flat=false)](https://hits.seeyoufarm.com)
   
