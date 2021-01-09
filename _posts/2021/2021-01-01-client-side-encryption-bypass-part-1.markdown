@@ -106,7 +106,7 @@ Sometimes they may use multiple encryption techniques on the same piece of data,
     
     We will try to understand by a step-by-step example:
     
-    I have prepared one demo application which helps you to understand the process, you can get the docker version of it from: [link](), once you are done with the setup, continue for the next.
+    I have prepared one demo application which helps you to understand the process, you can get the latest docker version of it from: [jsdebugginglab](http://hub.docker.com/r/bhattsameer/jsdebugginglab), once you are done with the setup (You can follow the Readme), continue for the next.
     
     So we have one web application which asks for user email and password for authentication.
     
