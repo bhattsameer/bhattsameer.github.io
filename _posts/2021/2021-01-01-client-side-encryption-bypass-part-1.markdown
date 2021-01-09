@@ -393,7 +393,7 @@ Sometimes they may use multiple encryption techniques on the same piece of data,
    
    
    Now we are on the OTP.php screen, we can bypass the same as well with same process but the encryption method is different than before.  
-   Take this OTP.php bypass as task and try it out on your own. The lab will be available on docker, you can configure it on your own and try it out.
+   Take this OTP.php bypass as task and try it out on your own. The lab will be available on [docker](http://hub.docker.com/r/bhattsameer/jsdebugginglab), you can configure it on your own and try it out.
    
 ### Conclusion:
 
