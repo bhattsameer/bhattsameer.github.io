@@ -64,7 +64,7 @@ Earlier one could only run JavaScript inside browser, but later on Node was deve
 
 We will not go into the basics of DevTools. However to understand the DevTools, you can go through this: [Blog](https://blittle.github.io/chrome-dev-tools/)
 
-### Let get into the main topic:
+### Let's get into the main topic:
 
 **How does a normal request and response structure looks like without encryption?**
 
@@ -82,7 +82,7 @@ So to test the password parameter with our payloads, we will be required to brea
 
 #### What developers think?
 
-Developers usually use enctyption to hide sensitive information from the user. They assume that with encryption implemented will preserve the confidentiality and integrity of the data, before someone breaks it!
+Developers usually use encryption to hide sensitive information from the user. They assume that with encryption implemented will preserve the confidentiality and integrity of the data, before someone breaks it!
 
 Sometimes they may use multiple encryption techniques on the same piece of data, which just adds to the more processing power and complexity. Adding more layers doesn't ensure the safety of the data.
 
@@ -405,7 +405,7 @@ Sometimes they may use multiple encryption techniques on the same piece of data,
    
    Thank you for your time and stay tuned for more!
    
-   ### Reference:
+### Reference:
    
    https://blittle.github.io/chrome-dev-tools/  
    https://javascript.info  
