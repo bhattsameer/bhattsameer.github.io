@@ -27,9 +27,11 @@ In the previous blog, we saw the steps to break the encryption mechanism, but id
 
 **So, Is there any way to make this process easier?**
 
-Well, not completely. But yes, there are some magic tricks which can helps make the process comparatively easier and ensure smooth debugging process. Let's get into it one by one:
+Well, not completely. But yes, there are some magic tricks which can helps make the process comparatively easier and ensure smooth debugging process.
 
- ### 1. debug():  
+### Let's get into it one by one:
+
+#### 1. debug():  
 
  It is a built-in method of devtools which helps you to debug the method directly without inserting any debug points. To use this method all you require is the name of method, where you wish to stop the execution process. Rest will be handled by this method. Devtool will take you to the method directly and let you observe the current values of all the parameters and objects in the scope section.
  
@@ -55,7 +57,7 @@ Well, not completely. But yes, there are some magic tricks which can helps make 
  
  **Note:** To stop debugging the method, run - ***undebug(method_name)*** in console.
  
- ### 2. monitor():  
+#### 2. monitor():  
 
  It is another built-in method of devtools which helps you to monitor the method directly without having to put any debug points. To use this method, all you need is name of the method. Rest is handled by monitor(), and it will give you a notification in console that the method is executed.
  
@@ -74,7 +76,7 @@ Well, not completely. But yes, there are some magic tricks which can helps make 
  
  **Note:** To stop monitoring the method, run - ***unmonitor(method_name)*** in console.
  
- ### 3. snippets: 
+#### 3. snippets: 
  
  It is the most useful and cool feature of devtool. You can run your own javascript inside the DOM of current application, i.e. you can replace a method with your own method by writing the snippet of it and executing it. 
  
@@ -96,7 +98,7 @@ Well, not completely. But yes, there are some magic tricks which can helps make 
  
  **I have prepared a list of [devtool-snippets-forhacks](https://github.com/bhattsameer/devtool-snippets-forhacks), check it out on my [github](https://github.com/bhattsameer/devtool-snippets-forhacks).**
  
- ### 4. monitor() + Snippet:
+#### 4. monitor() + Snippet:
  
  We will use monitor() on our snippet, I am doing this equip you about monitor(). Monitor not just tells you when the method is invoked but current arguments that are passed to it.
  
@@ -109,7 +111,7 @@ Well, not completely. But yes, there are some magic tricks which can helps make 
   
   ![snippet_monitor_1](/images/encryption_bypass_part2/8.png)
  
- ### 5. Memory:
+#### 5. Memory:
  
  This feature of devtools will help you to take heap snapshots. You can search the domain content and the sequence of javascipt file that were executed, this feature sometimes make your work easier than following the complex procedure to find the encryption logic or the intended file.
  
@@ -132,7 +134,7 @@ Well, not completely. But yes, there are some magic tricks which can helps make 
  
  ![memory_3](/images/encryption_bypass_part2/11.png)
  
- ### 6. Network Initiator:
+#### 6. Network Initiator:
  
  This is a feature of network section, you can search the method execution sequence in network for each URL. This will help in finding the logic or method in a page-wise manner, i.e. for OTP.php, otp gets encrypted when clicked on the submit button.
  
@@ -143,7 +145,7 @@ Well, not completely. But yes, there are some magic tricks which can helps make 
  
  ![network_1](/images/encryption_bypass_part2/12.png)
  
- ### 7. Resource Saver:
+#### 7. Resource Saver:
  
  This is a chrome extension, which helps you to download all the files that are loaded on the client-side. Once the files are downloaded, you can observe them locally through various tools in order to finding logics/links in it.
  
@@ -153,7 +155,7 @@ Well, not completely. But yes, there are some magic tricks which can helps make 
  
  ![resource_saver_1](/images/encryption_bypass_part2/13.png)
  
- ### 8. Requestly:
+#### 8. Requestly:
  
  This is a another chrome extension, which helps you to play with source tab workspace. You can replace the application's javascript code with your custom javascript code by redirecting it to the localhost.
  
