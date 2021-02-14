@@ -2,7 +2,8 @@
 layout: "post"
 title: "Client Side Encryption Bypass Part-2"
 date: "2021-02-14 4:00"
-excerpt: ""
+excerpt: "In this blog we will continue from where we left in Part-1 of this client side encryption bypass series.
+We will see some cool tips and tricks related to DevTools, which will be really helpful when you try break the encryption logic on your own."
 comments: false
 ---
 
@@ -10,7 +11,7 @@ comments: false
 Hi, this is [Debugger](https://github.com/bhattsameer) ready to debug JavaScript.  
 
 In this blog we will continue from where we left in [Part-1](https://github.com/bhattsameer/bhattsameer.github.io/blob/main/_posts/2021/2021-01-01-client-side-encryption-bypass-part-1.markdown) of this client side encryption bypass series.   
-We will see some cool tips and tricks related to [DevTools](https://developers.google.com/web/tools/chrome-devtools), which will be really helpful when you try break the encryption logic on your own.  
+We will see some cool tips and tricks related to [DevTools](https://developers.google.com/web/tools/chrome-devtools), which will be helpful when you try break the encryption logic on your own.  
 
 ```
  Debugger is always your BestFriend.
