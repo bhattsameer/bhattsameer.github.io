@@ -200,8 +200,6 @@ You can find me here:
  Github  : [bhattsameer](https://github.com/bhattsameer)  
  LinkedIn: [bhatt-sameer](https://linkedin.com/in/bhatt-sameer)
  
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbhattsameer.github.io%2F2021%2F02%2F14%2Fclient-side-encryption-bypass-part-2.html&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
-   
 ### Reference:
    
 https://blittle.github.io/chrome-dev-tools/  
@@ -209,5 +207,5 @@ https://javascript.info
 https://developers.google.com/web/tools/chrome-devtools   
 https://medium.com/frontmen/art-of-debugging-with-chrome-devtools-ab7b5fd8e0b4
    
-   
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbhattsameer.github.io%2F2021%2F02%2F14%2Fclient-side-encryption-bypass-part-2.html&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Visitors&edge_flat=false)](https://hits.seeyoufarm.com)   
   
