@@ -405,9 +405,10 @@ Sometimes they may use multiple encryption techniques on the same piece of data,
    
    Thank you for your time and stay tuned for more!
    
-   Follow me:  
-   Twitter : [@sameer_bhatt](https://twitter.com/sameer_bhatt5)  
-   Github  : [bhattsameer](https://github.com/bhattsameer)
+ You can find me here:  
+  Twitter : [@sameer_bhatt](https://twitter.com/sameer_bhatt5)    
+  Github  : [bhattsameer](https://github.com/bhattsameer)  
+  LinkedIn: [bhatt-sameer](https://linkedin.com/in/bhatt-sameer)
    
 ### Reference:
    
