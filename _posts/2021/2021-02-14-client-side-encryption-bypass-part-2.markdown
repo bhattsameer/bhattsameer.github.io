@@ -22,7 +22,7 @@ Before starting, I strongly suggest if you have't checked out the [part-1](https
 
 Last time we have seen the steps to break the encryption mechanism, but the process of indentifying the encryption logic sometimes became very complex, and chances to finding the responsible method from huge list of files will be time consuming as you need to put debug points at all the places. 
 
-![Picture1.png](images/Picture1.png)
+![Picture1.png](/images/encryption_bypass_part2/Picture1.png)
 
 **So are there any ways to make this process easier?**
 
@@ -39,18 +39,18 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
  
   a.) Navigate to "https://googlechrome.github.io/devtools-samples/debug-js/get-started" and observe the application behaviour.  
   
-  ![debug_1](images/1.png)
+  ![debug_1](/images/encryption_bypass_part2/1.png)
   
   b.) Open the inspect element or devtool and navigate to "Source" tab. Observe the responsible javascript file and method.  
   
-  ![debug_2](images/2.png)
+  ![debug_2](/images/encryption_bypass_part2/2.png)
   
   c.) Navigate to "console" section in devtool and run ***debug(method_name)***. Observe the output in console.  
   
-  ![debug_3](images/3.png)
+  ![debug_3](/images/encryption_bypass_part2/3.png)
   
   d.) Now when you "click on the add number button again" the ***updateLabel*** gets executed and suddenly the debug point gets envoked, resulting the execution stops at line number 29 for you to watch the variable type "string".  
-  ![debug_4](images/4.png)
+  ![debug_4](/images/encryption_bypass_part2/4.png)
  
  **Note:** To stop debugging the method run ***undebug(method_name)*** in console.
  
@@ -65,11 +65,11 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
  
   a.) Navigate to "https://googlechrome.github.io/devtools-samples/debug-js/get-started" and open the devtool console section. Post run ***monitor(method_name)*** and Observe the output in console. Keep your eyes on console as you will notifications in console only.  
   
-  ![monitor_1](images/5.png)
+  ![monitor_1](/images/encryption_bypass_part2/5.png)
   
   b.) Now when you "click on the add number button again" the ***updateLabel*** gets executed and you will get a notification in console.  
   
-  ![monitor_2](images/6.png)
+  ![monitor_2](/images/encryption_bypass_part2/6.png)
  
  **Note:** To stop monitoring the method run ***unmonitor(method_name)*** in console.
  
@@ -85,7 +85,7 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
  
   a.) Navigate to "https://googlechrome.github.io/devtools-samples/debug-js/get-started" and open up the devtool, access snippet feature of source tab. Here observe that we have written our own snippet code.  
   
-  ![snippet_1](images/7.png)
+  ![snippet_1](/images/encryption_bypass_part2/7.png)
   
   In the code observe that we have changed the previous ***updateLabel()*** method to argument based ***updateLabel(arg1, arg2)*** method.
   
@@ -106,7 +106,7 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
  
   a.) Once you have executed your snippet code, go back to console and run ***monitor(method_name)***. Now when you "click on the add number button again" the updated ***updateLabel*** will gets executed and you will get a notification in console. Observe that the arguments are also in the notification.  
   
-  ![snippet_monitor_1](images/8.png)
+  ![snippet_monitor_1](/images/encryption_bypass_part2/8.png)
  
  ### 5. Memory:
  
@@ -121,15 +121,15 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
  
  a.) Access the vulnerable app, we are at OTP.php screen. Open up the devtools and navigate to memory section, click on take snapshot.  
  
- ![memory_1](images/9.png)
+ ![memory_1](/images/encryption_bypass_part2/9.png)
  
  b.) Once the process is completed, search for 172.17 and observe the output.  
  
- ![memory_2](images/10.png)
+ ![memory_2](/images/encryption_bypass_part2/10.png)
  
  c.) When you scroll down, you will get the method and at right side the file name.  
  
- ![memory_3](images/11.png)
+ ![memory_3](/images/encryption_bypass_part2/11.png)
  
  ### 6. Network Initiator:
  
@@ -140,7 +140,7 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
  
  a.) Access the vulnerable app, we are at OTP.php screen. Open up the devtools and navigate to network section. Enter wrong OTP in the application and click on login button. Click on the URL and navigate to "initiator", observe the ***otplogear*** method.  
  
- ![network_1](images/12.png)
+ ![network_1](/images/encryption_bypass_part2/12.png)
  
  ### 7. Resource Saver:
  
@@ -150,7 +150,7 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
  a.) Download and install the extension in chrome using link: https://github.com/up209d/ResourcesSaverExt  
  b.) Navigate to target application. Open the devtools, navigate to "Resource Saver" and click on save all resources.  
  
- ![resource_saver_1](images/13.png)
+ ![resource_saver_1](/images/encryption_bypass_part2/13.png)
  
  ### 8. Requestly:
  
@@ -163,19 +163,19 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
  
  a.) Access the vulnerable application, we are at OTP.php screen. Open up the devtools and observe ***otplogear*** method in file **ExternalCustom.js***. Observe the code condition "a == 1".  
  
- ![requestly_1](images/14.png)
+ ![requestly_1](/images/encryption_bypass_part2/14.png)
  
  b.) Create one ***custom.js*** where the change of code is the condition "a == 0". Which means even if we enter wrong OTP, application should redirect us to dashboard page.  
  
- ![requestly_2](images/15.png)
+ ![requestly_2](/images/encryption_bypass_part2/15.png)
  
  c.) Install the requestly extension from [chrome extension store](https://chrome.google.com/webstore/detail/requestly-redirect-url-mo/mdnleldcmiljblolnjhpnblkcekpdkpa?hl=en-GB) and create one rule as below, here we are redirecting the http://172.17.0.2/Lab3/js/ExernalCustom.js to http://127.0.0.1/JS_TALK/custom.js  
  
- ![requestly_3](images/16.png)
+ ![requestly_3](/images/encryption_bypass_part2/6.png)
  
  d.) Reload the application and observe in devtools, one more workspace added in source tab with 127.0.0.1 and the original ***ExternalCustom.js*** is disappeared.  
  
- ![requestly_4](images/17.png)
+ ![requestly_4](/images/encryption_bypass_part2/17.png)
  
  e.) Now when you click on Login again with wrong otp, Boom!! you are logged into the application :))
 
