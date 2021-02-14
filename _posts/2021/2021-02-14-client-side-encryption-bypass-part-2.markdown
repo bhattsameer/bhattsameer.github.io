@@ -36,9 +36,9 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
  We can use this method to stop the continue step in and step over process to reach to the specific debug place or value, we can directly put the debug method and it will stop execution at the place where we wants.
      
  **Steps to use this:**  
- For the practical purpose we can take example of website: https://googlechrome.github.io/devtools-samples/debug-js/get-started   
+ For the practical purpose we can take example of website: [https://googlechrome.github.io/devtools-samples/debug-js/get-started](https://googlechrome.github.io/devtools-samples/debug-js/get-started)   
  
-  a.) Navigate to "https://googlechrome.github.io/devtools-samples/debug-js/get-started" and observe the application behaviour.  
+  a.) Navigate to "[https://googlechrome.github.io/devtools-samples/debug-js/get-started](https://googlechrome.github.io/devtools-samples/debug-js/get-started)" and observe the application behaviour.  
   
   ![debug_1](/images/encryption_bypass_part2/1.png)
   
@@ -51,6 +51,7 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
   ![debug_3](/images/encryption_bypass_part2/3.png)
   
   d.) Now when you "click on the add number button again" the ***updateLabel*** gets executed and suddenly the debug point gets envoked, resulting the execution stops at line number 29 for you to watch the variable type "string".  
+  
   ![debug_4](/images/encryption_bypass_part2/4.png)
  
  **Note:** To stop debugging the method run ***undebug(method_name)*** in console.
@@ -62,9 +63,9 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
  We can use this method to monitor that which method is responsible for encryption from multiple encryption logics implemented in the application, this will just reduce our time to check each and every method. So we can monitor that whenever we click on submit button, which method get called out first.
      
  **Steps to use this:**  
- For the practical purpose we can take example of website: https://googlechrome.github.io/devtools-samples/debug-js/get-started   
+ For the practical purpose we can take example of website: [https://googlechrome.github.io/devtools-samples/debug-js/get-started](https://googlechrome.github.io/devtools-samples/debug-js/get-started)  
  
-  a.) Navigate to "https://googlechrome.github.io/devtools-samples/debug-js/get-started" and open the devtool console section. Post run ***monitor(method_name)*** and Observe the output in console. Keep your eyes on console as you will notifications in console only.  
+  a.) Navigate to "[https://googlechrome.github.io/devtools-samples/debug-js/get-started](https://googlechrome.github.io/devtools-samples/debug-js/get-started)" and open the devtool console section. Post run ***monitor(method_name)*** and Observe the output in console. Keep your eyes on console as you will notifications in console only.  
   
   ![monitor_1](/images/encryption_bypass_part2/5.png)
   
@@ -82,9 +83,9 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
  **Sounds cool? using the developers tool and developers own logic for breaking there application.:))**
  
  **Steps to use this:**  
- For the practical purpose we can take example of website: https://googlechrome.github.io/devtools-samples/debug-js/get-started   
+ For the practical purpose we can take example of website: [https://googlechrome.github.io/devtools-samples/debug-js/get-started](https://googlechrome.github.io/devtools-samples/debug-js/get-started)     
  
-  a.) Navigate to "https://googlechrome.github.io/devtools-samples/debug-js/get-started" and open up the devtool, access snippet feature of source tab. Here observe that we have written our own snippet code.  
+  a.) Navigate to "[https://googlechrome.github.io/devtools-samples/debug-js/get-started](https://googlechrome.github.io/devtools-samples/debug-js/get-started)" and open up the devtool, access snippet feature of source tab. Here observe that we have written our own snippet code.  
   
   ![snippet_1](/images/encryption_bypass_part2/7.png)
   
@@ -103,7 +104,7 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
  This one really helpful because most of time the encryption methods are like ***method_name(data,key,salt)***, and if the key is same for all encryption logic, you can directly get the key by monitoring the method.
  
  **Steps to use this:**  
- For the practical purpose we can take example of website: https://googlechrome.github.io/devtools-samples/debug-js/get-started   
+ For the practical purpose we can take example of website: [https://googlechrome.github.io/devtools-samples/debug-js/get-started](https://googlechrome.github.io/devtools-samples/debug-js/get-started)  
  
   a.) Once you have executed your snippet code, go back to console and run ***monitor(method_name)***. Now when you "click on the add number button again" the updated ***updateLabel*** will gets executed and you will get a notification in console. Observe that the arguments are also in the notification.  
   
@@ -116,7 +117,7 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
  We can search the javascript files execution and filter out the files which may contains the logic of encryption.
  
  **Steps to use this:** 
- For the practical purpose we can take example of our vulnerable lab: https://172.17.0.2/Lab3/login.php
+ For the practical purpose we can take example of our vulnerable lab: [https://172.17.0.2/Lab3/login.php](https://172.17.0.2/Lab3/login.php)  
  
  **Note:** If you have not played with this lab, get the docker from [here](https://hub.docker.com/r/bhattsameer/jsdebugginglab) and start playing.  
  
@@ -137,7 +138,7 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
  This one is the menu feature of network section, you can search the method execution sequence in network for each URL. This will help us in finding the logic or method for each page wise, i.e. for OTP.php, otp is getting encrypted when we click on submit button.
  
  **Steps to use this:** 
- For the practical purpose we can take example of our vulnerable lab: https://172.17.0.2/Lab3/login.php
+ For the practical purpose we can take example of our vulnerable lab: [https://172.17.0.2/Lab3/login.php](https://172.17.0.2/Lab3/login.php)
  
  a.) Access the vulnerable app, we are at OTP.php screen. Open up the devtools and navigate to network section. Enter wrong OTP in the application and click on login button. Click on the URL and navigate to "initiator", observe the ***otplogear*** method.  
  
@@ -148,7 +149,7 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
  This is a chrome extension, which helps you to download all files which are loaded on client side, once the files are downloaded you can observe them locally through verious tools for finding logics, links in it and so on.
  
  **Steps to use this:**  
- a.) Download and install the extension in chrome using link: https://github.com/up209d/ResourcesSaverExt  
+ a.) Download and install the extension in chrome using link: [https://github.com/up209d/ResourcesSaverExt](https://github.com/up209d/ResourcesSaverExt)  
  b.) Navigate to target application. Open the devtools, navigate to "Resource Saver" and click on save all resources.  
  
  ![resource_saver_1](/images/encryption_bypass_part2/13.png)
@@ -160,7 +161,7 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
  This will help you when there are multiple changes needs to be perform everytime when the pages refreshes, as with every refresh all your changes went away, even you have to run the snippet code again.
  
  **Steps to use this:**  
- For the practical purpose we can take example of our vulnerable lab: https://172.17.0.2/Lab3/login.php
+ For the practical purpose we can take example of our vulnerable lab: [https://172.17.0.2/Lab3/login.php](https://172.17.0.2/Lab3/login.php)
  
  a.) Access the vulnerable application, we are at OTP.php screen. Open up the devtools and observe ***otplogear*** method in file **ExternalCustom.js***. Observe the code condition "a == 1".  
  
@@ -170,7 +171,7 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
  
  ![requestly_2](/images/encryption_bypass_part2/15.png)
  
- c.) Install the requestly extension from [chrome extension store](https://chrome.google.com/webstore/detail/requestly-redirect-url-mo/mdnleldcmiljblolnjhpnblkcekpdkpa?hl=en-GB) and create one rule as below, here we are redirecting the http://172.17.0.2/Lab3/js/ExernalCustom.js to http://127.0.0.1/JS_TALK/custom.js  
+ c.) Install the requestly extension from [chrome extension store](https://chrome.google.com/webstore/detail/requestly-redirect-url-mo/mdnleldcmiljblolnjhpnblkcekpdkpa?hl=en-GB) and create one rule as below, here we are redirecting the [http://172.17.0.2/Lab3/js/ExernalCustom.js](http://172.17.0.2/Lab3/js/ExernalCustom.js) to [http://127.0.0.1/JS_TALK/custom.js](http://127.0.0.1/JS_TALK/custom.js)    
  
  ![requestly_3](/images/encryption_bypass_part2/6.png)
  
@@ -183,7 +184,7 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
 ### Conclusion:  
 
 This blog was to help you in making the debugging process easier to find the encryption logic, using some tips and tricks of devtools. The real world of encryption is sure lot more complex than this one but being ready with all the tools and tricks is always helful to be motivated.:)) 
-There are lot more stuff about doing debugging with chrome devtools, please have a look at https://medium.com/frontmen/art-of-debugging-with-chrome-devtools-ab7b5fd8e0b4
+There are lot more stuff about doing debugging with chrome devtools, please have a look at [https://medium.com/frontmen/art-of-debugging-with-chrome-devtools-ab7b5fd8e0b4](https://medium.com/frontmen/art-of-debugging-with-chrome-devtools-ab7b5fd8e0b4)
 
 I enjoyed writing this article and hope that you enjoyed reading it.
 
@@ -196,6 +197,8 @@ If you have ways which you have found let me know as well :))
 Follow me:  
  Twitter : [@sameer_bhatt](https://twitter.com/sameer_bhatt5)  
  Github  : [bhattsameer](https://github.com/bhattsameer)
+ 
+ [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbhattsameer.github.io%2F2021%2F02%2F14%2Fclient-side-encryption-bypass-part-2.html&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
    
    ### Reference:
    
