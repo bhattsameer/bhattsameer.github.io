@@ -29,7 +29,7 @@ Last time we have seen the steps to break the encryption mechanism, but the proc
 
 Well, not completely. But yes there are some magic tricks which can helps us in making the process not complex much and they will help us for sure in our debugging process. let's see the magic tricks one by one:
 
- ### 1. debug():  
+ ### debug():  
 
  This one is built in method of devtools which helps you to debug the method directly without putting any debug points. To use this method all you need is name of the method where you want to stop the execution process and all other work will be handled by this method only. Devtool will take you to the method line number directly and let you observe the current values of all the parameters and objects in the scope section.
  
