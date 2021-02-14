@@ -97,7 +97,7 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
  
  **Note:** This feature is available in both firefox and chrome, But I have created all my snippets on chrome only as it allows you to modify parameter's value at run time in devtools.  
  
- **I have prepared the list of devtool-snippets-forhacks, you can check it out on my [github](https://github.com/bhattsameer).**
+ **I have prepared the list of [devtool-snippets-forhacks](https://github.com/bhattsameer/devtool-snippets-forhacks), you can check it out on my [github](https://github.com/bhattsameer/devtool-snippets-forhacks).**
  
 #### 4. monitor() + Snippet:
  
