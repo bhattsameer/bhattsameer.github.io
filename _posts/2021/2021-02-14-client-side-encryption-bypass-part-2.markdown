@@ -196,15 +196,15 @@ Thank you for your time and stay tuned for more!
 If there is anything I have missed, or you would like to add, please do let me know. :))  
 
 You can find me here:  
- Twitter : [@sameer_bhatt](https://twitter.com/sameer_bhatt5)  
- Github  : [bhattsameer](https://github.com/bhattsameer)
+ Twitter : [@sameer_bhatt](https://twitter.com/sameer_bhatt5)    
+ Github  : [bhattsameer](https://github.com/bhattsameer)  
    
-   ### Reference:
+### Reference:
    
-   https://blittle.github.io/chrome-dev-tools/  
-   https://javascript.info  
-   https://developers.google.com/web/tools/chrome-devtools   
-   https://medium.com/frontmen/art-of-debugging-with-chrome-devtools-ab7b5fd8e0b4
+https://blittle.github.io/chrome-dev-tools/  
+https://javascript.info  
+https://developers.google.com/web/tools/chrome-devtools   
+https://medium.com/frontmen/art-of-debugging-with-chrome-devtools-ab7b5fd8e0b4
    
    
   
