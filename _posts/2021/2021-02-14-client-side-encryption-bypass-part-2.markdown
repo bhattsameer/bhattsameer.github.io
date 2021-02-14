@@ -119,7 +119,7 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
  We can search the javascript files execution and filter out the files which may contains the logic of encryption.
  
  **Steps to use this:** 
- For the practical purpose we can take example of our vulnerable lab: [https://172.17.0.2/Lab3/login.php](https://172.17.0.2/Lab3/login.php)  
+ For the practical purpose we can take example of our vulnerable lab: [http://172.17.0.2/Lab3/login.php](http://172.17.0.2/Lab3/login.php)  
  
  **Note:** If you have not played with this lab, get the docker from [here](https://hub.docker.com/r/bhattsameer/jsdebugginglab) and start playing.  
  
@@ -140,7 +140,7 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
  This one is the menu feature of network section, you can search the method execution sequence in network for each URL. This will help us in finding the logic or method for each page wise, i.e. for OTP.php, otp is getting encrypted when we click on submit button.
  
  **Steps to use this:** 
- For the practical purpose we can take example of our vulnerable lab: [https://172.17.0.2/Lab3/login.php](https://172.17.0.2/Lab3/login.php)
+ For the practical purpose we can take example of our vulnerable lab: [http://172.17.0.2/Lab3/login.php](http://172.17.0.2/Lab3/login.php)
  
  a.) Access the vulnerable app, we are at OTP.php screen. Open up the devtools and navigate to network section. Enter wrong OTP in the application and click on login button. Click on the URL and navigate to "initiator", observe the ***otplogear*** method.  
  
@@ -163,7 +163,7 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
  This will help you when there are multiple changes needs to be perform everytime when the pages refreshes, as with every refresh all your changes went away, even you have to run the snippet code again.
  
  **Steps to use this:**  
- For the practical purpose we can take example of our vulnerable lab: [https://172.17.0.2/Lab3/login.php](https://172.17.0.2/Lab3/login.php)
+ For the practical purpose we can take example of our vulnerable lab: [http://172.17.0.2/Lab3/login.php](http://172.17.0.2/Lab3/login.php)
  
  a.) Access the vulnerable application, we are at OTP.php screen. Open up the devtools and observe ***otplogear*** method in file **ExternalCustom.js***. Observe the code condition "a == 1".  
  
