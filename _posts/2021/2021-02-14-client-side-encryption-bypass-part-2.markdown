@@ -99,7 +99,7 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
  
  **I have prepared the list of devtool-snippets-forhacks, you can check it out on my [github](https://github.com/bhattsameer).**
  
- ### 4. monitor() + Snippet:
+#### 4. monitor() + Snippet:
  
  We will use monitor method on our snippet, I am doing this to tell you more about monitor(). Monitor not just tells you when the method invoked but also tells you the current arguments passed to it.
  
@@ -175,7 +175,7 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
  
  c.) Install the requestly extension from [chrome extension store](https://chrome.google.com/webstore/detail/requestly-redirect-url-mo/mdnleldcmiljblolnjhpnblkcekpdkpa?hl=en-GB) and create one rule as below, here we are redirecting the [http://172.17.0.2/Lab3/js/ExernalCustom.js](http://172.17.0.2/Lab3/js/ExernalCustom.js) to [http://127.0.0.1/JS_TALK/custom.js](http://127.0.0.1/JS_TALK/custom.js)    
  
- ![requestly_3](/images/encryption_bypass_part2/6.png)
+ ![requestly_3](/images/encryption_bypass_part2/16.png)
  
  d.) Reload the application and observe in devtools, one more workspace added in source tab with 127.0.0.1 and the original ***ExternalCustom.js*** is disappeared.  
  
