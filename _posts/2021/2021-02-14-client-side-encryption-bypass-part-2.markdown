@@ -10,7 +10,7 @@ comments: false
 ### **TL;DR**
 Hi, this is [Debugger](https://github.com/bhattsameer) ready to debug JavaScript.  
 
-In this blog we will continue from where we left in [Part-1](https://github.com/bhattsameer/bhattsameer.github.io/blob/main/_posts/2021/2021-01-01-client-side-encryption-bypass-part-1.markdown) of this client side encryption bypass series.   
+In this blog we will continue from where we left in [Part-1](https://bhattsameer.github.io/2021/01/01/client-side-encryption-bypass-part-1.html) of this client side encryption bypass series.   
 We will see some cool tips and tricks related to [DevTools](https://developers.google.com/web/tools/chrome-devtools), which will be helpful when you try break the encryption logic on your own.  
 
 ```
@@ -19,7 +19,7 @@ We will see some cool tips and tricks related to [DevTools](https://developers.g
 
 ### Introduction
 
-Before starting, I strongly suggest if you have't checked out the [part-1](https://github.com/bhattsameer/bhattsameer.github.io/blob/main/_posts/2021/2021-01-01-client-side-encryption-bypass-part-1.markdown) please read that first.  
+Before starting, I strongly suggest if you have't checked out the [part-1](https://bhattsameer.github.io/2021/01/01/client-side-encryption-bypass-part-1.html) please read that first.  
 
 Last time we have seen the steps to break the encryption mechanism, but the process of indentifying the encryption logic sometimes became very complex, and chances to finding the responsible method from huge list of files will be time consuming as you need to put debug points at all the places. 
 
