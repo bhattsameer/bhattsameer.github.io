@@ -185,7 +185,7 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
 
 ### Conclusion:  
 
-This blog was to help you in making the debugging process easier to find the encryption logic, using some tips and tricks of devtools. The real world of encryption is sure lot more complex than this one but being ready with all the tools and tricks is always helful to be motivated.:)) 
+This blog was to help you in making the debugging process easier to find the encryption logic, using some tips and tricks of devtools. The real world of encryption is sure lot more complex than this one but being ready with all the tools and tricks is always helful to be motivated.:))   
 There are lot more stuff about doing debugging with chrome devtools, please have a look at [https://medium.com/frontmen/art-of-debugging-with-chrome-devtools-ab7b5fd8e0b4](https://medium.com/frontmen/art-of-debugging-with-chrome-devtools-ab7b5fd8e0b4)
 
 I enjoyed writing this article and hope that you enjoyed reading it.
