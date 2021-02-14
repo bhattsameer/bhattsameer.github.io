@@ -188,13 +188,12 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
 This blog was to help you in making the debugging process easier to find the encryption logic, using some tips and tricks of devtools. The real world of encryption is sure lot more complex than this one but being ready with all the tools and tricks is always helful to be motivated.:))   
 There are lot more stuff about doing debugging with chrome devtools, please have a look at [https://medium.com/frontmen/art-of-debugging-with-chrome-devtools-ab7b5fd8e0b4](https://medium.com/frontmen/art-of-debugging-with-chrome-devtools-ab7b5fd8e0b4)
 
-I enjoyed writing this article and hope that you enjoyed reading it.
-
+I enjoyed writing this article and hope that you enjoyed reading it too.  
 In part 3, we will get rid of this continues process, and create our own snippet to fuzz the encrypted parameters using devtools.
 
 Thank you for your time and stay tuned for more!
 
-If you have ways which you have found let me know as well :))  
+If you know any other ways to make this process easier. Please let me know as well, Happy to learn more :))  
 
 Follow me:  
  Twitter : [@sameer_bhatt](https://twitter.com/sameer_bhatt5)  
