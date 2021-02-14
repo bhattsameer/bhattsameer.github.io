@@ -29,7 +29,7 @@ Last time we have seen the steps to break the encryption mechanism, but the proc
 
 Well, not completely. But yes there are some magic tricks which can helps us in making the process not complex much and they will help us for sure in our debugging process.  
 
-### Let's see the magic tricks one by one:
+### Let's see the magic tricks one by one:  
 
 #### 1. debug():  
 
@@ -58,7 +58,7 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
  
  **Note:** To stop debugging the method run ***undebug(method_name)*** in console.
  
- ### 2. monitor():  
+#### 2. monitor():  
 
  This one is built in method of devtools which helps you to monitor the method directly without putting any debug points. To use this method all you need is name of the method, and rest all handled by monitor(), it will give you notification in console that the method is executed.
  
@@ -77,7 +77,7 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
  
  **Note:** To stop monitoring the method run ***unmonitor(method_name)*** in console.
  
-### 3. snippets: 
+#### 3. snippets: 
  
  This one is the most useful and cool feature of devtool. You can run your own javascript inside the DOM of current application, means you can replace the method with your own method by writing the snippet of it and execute it. 
  
@@ -112,7 +112,7 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
   
   ![snippet_monitor_1](/images/encryption_bypass_part2/8.png)
  
- ### 5. Memory:
+#### 5. Memory:
  
  This feature of devtools will help you to take heap snapshots, and you can search out the domain content with the sequence of javascipt file gets executed, this feature sometimes make your work easier than following the complex process to find the encryption logic or the file which contains that logic.
  
@@ -135,7 +135,7 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
  
  ![memory_3](/images/encryption_bypass_part2/11.png)
  
- ### 6. Network Initiator:
+#### 6. Network Initiator:
  
  This one is the menu feature of network section, you can search the method execution sequence in network for each URL. This will help us in finding the logic or method for each page wise, i.e. for OTP.php, otp is getting encrypted when we click on submit button.
  
@@ -146,7 +146,7 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
  
  ![network_1](/images/encryption_bypass_part2/12.png)
  
- ### 7. Resource Saver:
+#### 7. Resource Saver:
  
  This is a chrome extension, which helps you to download all files which are loaded on client side, once the files are downloaded you can observe them locally through verious tools for finding logics, links in it and so on.
  
@@ -156,7 +156,7 @@ Well, not completely. But yes there are some magic tricks which can helps us in 
  
  ![resource_saver_1](/images/encryption_bypass_part2/13.png)
  
- ### 8. Requestly:
+#### 8. Requestly:
  
  This is a chrome extension, which helps you to play with source tab workspace. Means you can replace the application's javascript code with your custom javascript code by redirecting it to localhost.
  
