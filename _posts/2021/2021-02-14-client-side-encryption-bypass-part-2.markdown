@@ -196,7 +196,7 @@ Thank you for your time and stay tuned for more!
 If there is anything I have missed, or you would like to add, please do let me know. :))  
 
 You can find me here:  
- Twitter : [@sameer_bhatt](https://twitter.com/sameer_bhatt5)    
+ Twitter : [@sameer_bhatt5](https://twitter.com/sameer_bhatt5)    
  Github  : [bhattsameer](https://github.com/bhattsameer)  
  LinkedIn: [bhatt-sameer](https://linkedin.com/in/bhatt-sameer)
  
