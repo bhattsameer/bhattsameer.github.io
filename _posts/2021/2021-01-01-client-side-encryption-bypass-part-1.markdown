@@ -406,15 +406,15 @@ Sometimes they may use multiple encryption techniques on the same piece of data,
    Thank you for your time and stay tuned for more!
    
  You can find me here:  
-  Twitter : [@sameer_bhatt](https://twitter.com/sameer_bhatt5)    
+  Twitter : [@sameer_bhatt5](https://twitter.com/sameer_bhatt5)    
   Github  : [bhattsameer](https://github.com/bhattsameer)  
   LinkedIn: [bhatt-sameer](https://linkedin.com/in/bhatt-sameer)
    
 ### Reference:
    
-   https://blittle.github.io/chrome-dev-tools/  
-   https://javascript.info  
-   https://developers.google.com/web/tools/chrome-devtools  
+https://blittle.github.io/chrome-dev-tools/  
+https://javascript.info  
+https://developers.google.com/web/tools/chrome-devtools  
      
-   [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbhattsameer.github.io%2F2021%2F01%2F01%2Fclient-side-encryption-bypass-part-1.html&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Visitors&edge_flat=false)](https://hits.seeyoufarm.com)
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbhattsameer.github.io%2F2021%2F01%2F01%2Fclient-side-encryption-bypass-part-1.html&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Visitors&edge_flat=false)](https://hits.seeyoufarm.com)
   
