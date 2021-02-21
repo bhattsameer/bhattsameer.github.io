@@ -107,7 +107,8 @@ x.setAttribute('id', 'payloads');  // creating keyvalue pairs.
 document.body.appendChild(x); // for all the payloads.
 }
 ```  
-**Note:** We can create an array for payloads as well.:))  
+**Note:** We can create an array for payloads as well.:))
+
 2. Creating a method ***fuzz()*** which contains the main fuzzing logic:  
 
 ```js
@@ -116,7 +117,7 @@ function fuzz(){   // method fuzz()
 var textArea = document.getElementById('payloads'); //fetching all payloads
 var lines = textArea.value.split('\n'); // spilt them with \n its like pressing enter at the end of each payload
 
-```
+```  
 
 3. Logic to automate the encyption process:  
 
@@ -136,9 +137,8 @@ console.log('Payload: ' + lines[j]);                  // printing payload in con
   //Encrypted Payload
   console.log('Encrypted Payload: ' + otpEncrypt); //printing out the otpencrypt with our payloads
 
-``` 
-
- 4. Creating a post request for ***otpvalidate.php***:
+```  
+4. Creating a post request for ***otpvalidate.php***:
 
 ```js
   //Prepare post request
@@ -146,16 +146,14 @@ console.log('Payload: ' + lines[j]);                  // printing payload in con
     otp: otpEncrypt.toString()  // passing encrypted data to otp parameter.
   },
 ```  
- 
- 5. Since the response is encrypted, let's create a logic to handle the response which decrypts the parameter at run-time.  
+5. Since the response is encrypted, let's create a logic to handle the response which decrypts the parameter at run-time.  
  From the original code-block:  
  a.) **Encryption Method**: CryptoJS.AES.decrypt(JSON.stringify(res), mykey, {format: CryptoJSAesJson}).toString(CryptoJS.enc.Utf8);  
   i.) JSON.stringify(res) => encrypted_response_data  
   ii.) mykey => Encryption key  
   iii.) {format: CryptoJSAesJson} => Format of CryptoJs Encryption  
  b.) **Encryption Key**: mykey = "myKey123"  
-
-
+ 
 ```js
   //Handle Response and decrypting the response method
   function(res){   // method to handle response.
@@ -170,9 +168,8 @@ console.log('Payload: ' + lines[j]);                  // printing payload in con
     //sleep
     sleep(3000);  // adding a little to each request
 }
-``` 
-
- 6. Creating a code-block for time delay.
+```  
+6. Creating a code-block for time delay.
 
 ```js
 // sleep function
@@ -185,7 +182,7 @@ function sleep(milliseconds) {  // Making a method sleep()
   }
 }
 }
-```
+```   
 
 **Step to use the code in snippet:**
 
