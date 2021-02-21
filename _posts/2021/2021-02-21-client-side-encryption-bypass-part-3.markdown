@@ -32,7 +32,7 @@ Well, Yes! It is possible. However, to automate this process requires great obse
 **Let's get Started!**
 ***For automation of the encryption process, you can use the [vulnerable lab application](https://hub.docker.com/r/bhattsameer/jsdebugginglab).***
 
-****Now to automate this process, we require a few things:**  
+**Now to automate this process, we require a few things:**  
  1. Encryption logic (Global encryption method from JavaScript code, that we will use in our custom code).  
  2. Encryption Key: If the encryption key is hard-coded which is great! it is pretty common too. :)) But if it isn't, you will need global logic for encryption-key generation.
  3. Basic knowledge of JavaScript to write custom code.  
@@ -42,7 +42,7 @@ Well, Yes! It is possible. However, to automate this process requires great obse
  1. **Why I mentioned global methods or global logic?**  
     Sometimes, the scope of code is limited to a set of block only, which means - if you are out of that block or scope, you can't run that method in console.  
     For example:  
-    In the sample code below, we can not run the generate_new_key out of the scope of the block. So we need to use methods or code which we can run out of the code block and to make our custom code run independently.
+    In the sample code below, we can not run the generate_new_key out of the scope of the block. So we need to use methods or code which we can run out of the code block and to make our custom code run independently.  
  ```js
  function method_name(key, data){
    generate_new_key = aes.key(key);
@@ -240,5 +240,7 @@ https://medium.com/frontmen/art-of-debugging-with-chrome-devtools-ab7b5fd8e0b4
 [Whyte](https://www.instagram.com/whyte_ivee/)  
 [Jagdish jogal](https://twitter.com/j_jogal_545)  
 [Jaimin Gohel](https://twitter.com/jaimin_gohel)  
-[Net-Square](https://www.net-square.com)
-  
+[Net-Square](https://www.net-square.com)  
+
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbhattsameer.github.io%2F2021%2F02%2F21%2Fclient-side-encryption-bypass-part-3.html&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Visitors&edge_flat=false)](https://hits.seeyoufarm.com)
+
