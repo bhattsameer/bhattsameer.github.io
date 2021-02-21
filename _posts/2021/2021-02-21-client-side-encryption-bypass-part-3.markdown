@@ -57,7 +57,7 @@ Well, Yes! It is possible. However, to automate this process requires great obse
   2. **Snippet:**  
      We have already discsussed about snippet in our [Part-2](https://bhattsameer.github.io/2021/02/14/client-side-encryption-bypass-part-2.html) of Client-side Encryption Bypass series. You can refer it in case of any confusion.
      We will write our custom code in this snippet and run it in the DOM of current application then, use the application's encryption logic to automate this process.  
-     ***You can find my snippet collects here: [devtool-snippets-forhacks](https://github.com/bhattsameer/devtool-snippets-forhacks).***
+     ***You can find my snippet collection here: [devtool-snippets-forhacks](https://github.com/bhattsameer/devtool-snippets-forhacks).***
      
 From the vulnerable web application, we will see how to fuzz the OTP parameter. As we already know, that when we enter valid OTP we are redirected to the dashboard page. But When we enter wrong OTP, we get "Access Denied". The OTP parameter is encrypted in both the request and response body.
 
@@ -97,7 +97,7 @@ Few points from request structure:
 3. **URL**: http://172.17.0.2/Lab3/otpvalidate.php  
 
 **To create our automatation script, lets assemble all the parts:**  
-1. Creating a method ***payloads()*** for *textarea* where we can add the payloads. We will create a key:value pair for this. This block of code will be same for the encryption logic as we are just creating a textarea where we can simply supply the payloads:  
+ A. Creating a method ***payloads()*** for *textarea* where we can add the payloads. We will create a key:value pair for this. This block of code will be same for the encryption logic as we are just creating a textarea where we can simply supply the payloads:  
 
 ```js  
 //For our payloads:
@@ -110,7 +110,7 @@ document.body.appendChild(x); // for all the payloads.
 
 **Note:** We can create an array for payloads as well.:))
 
-2. Creating a method ***fuzz()*** which contains the main fuzzing logic:  
+ B. Creating a method ***fuzz()*** which contains the main fuzzing logic:  
 
 ```js  
 // Fuzzing logic:
@@ -120,7 +120,7 @@ var lines = textArea.value.split('\n'); // spilt them with \n its like pressing 
 
 ```  
 
-3. Logic to automate the encyption process:  
+ C. Logic to automate the encyption process:  
 
 ```js  
 for (var j = 0; j < lines.length; j++) { // for loop till we have passed all the payloads to parameter
@@ -139,7 +139,7 @@ console.log('Payload: ' + lines[j]);                  // printing payload in con
 
 ```  
 
-4. Creating a post request for ***otpvalidate.php***:
+ D. Creating a post request for ***otpvalidate.php***:
 
 ```js  
   //Prepare post request
@@ -148,7 +148,7 @@ console.log('Payload: ' + lines[j]);                  // printing payload in con
   },
 ```  
 
-5. Since the response is encrypted, let's create a logic to handle the response which decrypts the parameter at run-time.  
+ E. Since the response is encrypted, let's create a logic to handle the response which decrypts the parameter at run-time.  
  From the original code-block:  
  a.) **Encryption Method**: CryptoJS.AES.decrypt(JSON.stringify(res), mykey, {format: CryptoJSAesJson}).toString(CryptoJS.enc.Utf8);  
   i.) JSON.stringify(res) => encrypted_response_data  
@@ -171,7 +171,7 @@ console.log('Payload: ' + lines[j]);                  // printing payload in con
     sleep(3000);  // adding a little to each request
 }
 ```  
-6. Creating a code-block for time delay.
+ F. Creating a code-block for time delay.
 
 ```js
 // sleep function
