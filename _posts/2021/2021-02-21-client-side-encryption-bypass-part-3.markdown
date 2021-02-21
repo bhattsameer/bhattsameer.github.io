@@ -98,7 +98,7 @@ Few points from request structure:
 
 **To create our automatation script, lets assemble all the parts:**
 
-1. Creating a method ***payloads()*** for *textarea* where we can add the payloads. We will create a key:value pair for this. This block of code will be same for the encryption logic as we are just creating a textarea where we can simply supply the payloads:  
+ 1. Creating a method ***payloads()*** for *textarea* where we can add the payloads. We will create a key:value pair for this. This block of code will be same for the encryption logic as we are just creating a textarea where we can simply supply the payloads:  
 
 ```js
 
@@ -109,9 +109,9 @@ x.setAttribute('id', 'payloads');  // creating keyvalue pairs.
 document.body.appendChild(x); // for all the payloads.
 }
 ```  
-**Note:** We can create an array for payloads as well.:))
+ **Note:** We can create an array for payloads as well.:))
 
-2. Creating a method ***fuzz()*** which contains the main fuzzing logic:  
+ 2. Creating a method ***fuzz()*** which contains the main fuzzing logic:  
 
 ```js
 // Fuzzing logic:
@@ -121,7 +121,7 @@ var lines = textArea.value.split('\n'); // spilt them with \n its like pressing 
 
 ```  
 
-3. Logic to automate the encyption process:  
+ 3. Logic to automate the encyption process:  
 
 ```js
 
@@ -141,7 +141,7 @@ console.log('Payload: ' + lines[j]);                  // printing payload in con
 
 ``` 
 
-4. Creating a post request for ***otpvalidate.php***:
+ 4. Creating a post request for ***otpvalidate.php***:
 
 ```js
   //Prepare post request
@@ -149,7 +149,7 @@ console.log('Payload: ' + lines[j]);                  // printing payload in con
     otp: otpEncrypt.toString()  // passing encrypted data to otp parameter.
   },
 ```  
-5. Since the response is encrypted, let's create a logic to handle the response which decrypts the parameter at run-time.  
+ 5. Since the response is encrypted, let's create a logic to handle the response which decrypts the parameter at run-time.  
  From the original code-block:  
  a.) **Encryption Method**: CryptoJS.AES.decrypt(JSON.stringify(res), mykey, {format: CryptoJSAesJson}).toString(CryptoJS.enc.Utf8);  
   i.) JSON.stringify(res) => encrypted_response_data  
@@ -174,7 +174,7 @@ console.log('Payload: ' + lines[j]);                  // printing payload in con
 }
 ``` 
 
-6. Creating a code-block for time delay.
+ 6. Creating a code-block for time delay.
 
 ```js
 // sleep function
@@ -191,30 +191,24 @@ function sleep(milliseconds) {  // Making a method sleep()
 
 **Step to use the code in snippet:**
 
-1. Start [vulnerable lab docker](https://hub.docker.com/r/bhattsameer/jsdebugginglab) and navigate to [http://172.17.0.2/Lab3/login.php](http://172.17.0.2/Lab3/login.php).
- Enter valid credentials to reach OTP.php page.
+ 1. Start [vulnerable lab docker](https://hub.docker.com/r/bhattsameer/jsdebugginglab) and navigate to [http://172.17.0.2/Lab3/login.php](http://172.17.0.2/Lab3/login.php).  
+ Enter valid credentials to reach OTP.php page.  
+ ![Image2](/images/encryption_bypass_part2/2.png)  
 
-![Image2](/images/encryption_bypass_part2/2.png)
+ 2. Fire up the devtools and create a snippet ***fuzzit*** in source tab:  
+ ![Image3](/images/encryption_bypass_part2/3.png)  
+ 
+ 3. Execute the snippet using "Ctrl + Enter" or by using the Run snippet button.  
+ ![Image4](/images/encryption_bypass_part2/4.png)  
 
-2. Fire up the devtools and create a snippet ***fuzzit*** in source tab:
+ 4. Navigate to console, run ***payloads()*** and observe in browser as a textarea is created.  
+ ![Image5](/images/encryption_bypass_part2/5.png)  
 
-![Image3](/images/encryption_bypass_part2/3.png)
+ 5. Enter all your payloads in the textarea and run ***fuzzit()*** in console. Observe the console.  
+ ![Image6](/images/encryption_bypass_part2/6.png)  
 
-3. Execute the snippet using "Ctrl + Enter" or by using the Run snippet button.
-
-![Image4](/images/encryption_bypass_part2/4.png)
-
-4. Navigate to console, run ***payloads()*** and observe in browser as a textarea is created.
-
-![Image5](/images/encryption_bypass_part2/5.png)
-
-5. Enter all your payloads in the textarea and run ***fuzzit()*** in console. Observe the console.  
-
-![Image6](/images/encryption_bypass_part2/6.png)
-
-6. Fuzzing starts and we will get responses once the fuzzing is completed.
-
-![Image7](/images/encryption_bypass_part2/7.png)
+ 6. Fuzzing starts and we will get responses once the fuzzing is completed.  
+ ![Image7](/images/encryption_bypass_part2/7.png)
 
 ### Conclusion:  
 This blog was to create a logic to fuzz encrypted request parameters using the snippet feature of devtool. The real world of encryption gets more complicated and this is just one example, and on top of that automation can be time-cosuming and difficult at times. However, real fun lies in the use of developer tools in order to the encryption logic using the application's logic.:))  
