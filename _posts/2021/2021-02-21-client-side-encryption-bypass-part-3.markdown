@@ -97,8 +97,7 @@ Few points from request structure:
 3. **URL**: http://172.17.0.2/Lab3/otpvalidate.php  
 
 **To create our automatation script, lets assemble all the parts:**  
- 1. Creating a method ***payloads()*** for *textarea* where we can add the payloads. We will create a key:value pair for this. This block of code will be same for the encryption logic as we are just creating a textarea where we can simply supply the payloads:  
-
+1. Creating a method ***payloads()*** for *textarea* where we can add the payloads. We will create a key:value pair for this. This block of code will be same for the encryption logic as we are just creating a textarea where we can simply supply the payloads:  
 ```js
 
 //For our payloads:
@@ -108,9 +107,8 @@ x.setAttribute('id', 'payloads');  // creating keyvalue pairs.
 document.body.appendChild(x); // for all the payloads.
 }
 ```  
- **Note:** We can create an array for payloads as well.:))
-
- 2. Creating a method ***fuzz()*** which contains the main fuzzing logic:  
+**Note:** We can create an array for payloads as well.:))  
+2. Creating a method ***fuzz()*** which contains the main fuzzing logic:  
 
 ```js
 // Fuzzing logic:
@@ -118,9 +116,9 @@ function fuzz(){   // method fuzz()
 var textArea = document.getElementById('payloads'); //fetching all payloads
 var lines = textArea.value.split('\n'); // spilt them with \n its like pressing enter at the end of each payload
 
-```  
+```
 
- 3. Logic to automate the encyption process:  
+3. Logic to automate the encyption process:  
 
 ```js
 
