@@ -98,6 +98,7 @@ Few points from request structure:
 
 **To create our automatation script, lets assemble all the parts:**  
 1. Creating a method ***payloads()*** for *textarea* where we can add the payloads. We will create a key:value pair for this. This block of code will be same for the encryption logic as we are just creating a textarea where we can simply supply the payloads:  
+
 ```js
 
 //For our payloads:
@@ -107,6 +108,7 @@ x.setAttribute('id', 'payloads');  // creating keyvalue pairs.
 document.body.appendChild(x); // for all the payloads.
 }
 ```  
+
 **Note:** We can create an array for payloads as well.:))
 
 2. Creating a method ***fuzz()*** which contains the main fuzzing logic:  
@@ -138,6 +140,7 @@ console.log('Payload: ' + lines[j]);                  // printing payload in con
   console.log('Encrypted Payload: ' + otpEncrypt); //printing out the otpencrypt with our payloads
 
 ```  
+
 4. Creating a post request for ***otpvalidate.php***:
 
 ```js
@@ -146,6 +149,7 @@ console.log('Payload: ' + lines[j]);                  // printing payload in con
     otp: otpEncrypt.toString()  // passing encrypted data to otp parameter.
   },
 ```  
+
 5. Since the response is encrypted, let's create a logic to handle the response which decrypts the parameter at run-time.  
  From the original code-block:  
  a.) **Encryption Method**: CryptoJS.AES.decrypt(JSON.stringify(res), mykey, {format: CryptoJSAesJson}).toString(CryptoJS.enc.Utf8);  
