@@ -149,14 +149,14 @@ console.log('Payload: ' + lines[j]);                  // printing payload in con
 ```  
 
  E. Since the response is encrypted, let's create a logic to handle the response which decrypts the parameter at run-time.  
- From the original code-block:  
- a.) **Encryption Method**: CryptoJS.AES.decrypt(JSON.stringify(res), mykey, {format: CryptoJSAesJson}).toString(CryptoJS.enc.Utf8);  
-  i.) JSON.stringify(res) => encrypted_response_data  
-  ii.) mykey => Encryption key  
-  iii.) {format: CryptoJSAesJson} => Format of CryptoJs Encryption  
- b.) **Encryption Key**: mykey = "myKey123"  
+   From the original code-block:
+   1. **Encryption Method**: CryptoJS.AES.decrypt(JSON.stringify(res), mykey, {format: CryptoJSAesJson}).toString(CryptoJS.enc.Utf8);  
+    i. JSON.stringify(res) => encrypted_response_data  
+    ii. mykey => Encryption key  
+    iii. {format: CryptoJSAesJson} => Format of CryptoJs Encryption  
+   2. **Encryption Key**: mykey = "myKey123"  
  
-```js
+```js  
   //Handle Response and decrypting the response method
   function(res){   // method to handle response.
 
@@ -173,7 +173,7 @@ console.log('Payload: ' + lines[j]);                  // printing payload in con
 ```  
  F. Creating a code-block for time delay.
 
-```js
+```js  
 // sleep function
 function sleep(milliseconds) {  // Making a method sleep()
   var start = new Date().getTime();   
