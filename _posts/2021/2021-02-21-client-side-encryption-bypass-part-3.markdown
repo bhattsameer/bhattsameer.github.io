@@ -97,7 +97,6 @@ Few points from request structure:
 3. **URL**: http://172.17.0.2/Lab3/otpvalidate.php  
 
 **To create our automatation script, lets assemble all the parts:**  
-
  1. Creating a method ***payloads()*** for *textarea* where we can add the payloads. We will create a key:value pair for this. This block of code will be same for the encryption logic as we are just creating a textarea where we can simply supply the payloads:  
 
 ```js
