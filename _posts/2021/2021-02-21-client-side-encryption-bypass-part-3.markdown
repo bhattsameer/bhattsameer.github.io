@@ -190,22 +190,22 @@ function sleep(milliseconds) {  // Making a method sleep()
 
  1. Start [vulnerable lab docker](https://hub.docker.com/r/bhattsameer/jsdebugginglab) and navigate to [http://172.17.0.2/Lab3/login.php](http://172.17.0.2/Lab3/login.php).  
  Enter valid credentials to reach OTP.php page.  
- ![Image2](/images/encryption_bypass_part2/2.png)  
+ ![Image2](/images/encryption_bypass_part3/2.png)  
 
  2. Fire up the devtools and create a snippet ***fuzzit*** in source tab:  
- ![Image3](/images/encryption_bypass_part2/3.png)  
+ ![Image3](/images/encryption_bypass_part3/3.png)  
  
  3. Execute the snippet using "Ctrl + Enter" or by using the Run snippet button.  
- ![Image4](/images/encryption_bypass_part2/4.png)  
+ ![Image4](/images/encryption_bypass_part3/4.png)  
 
  4. Navigate to console, run ***payloads()*** and observe in browser as a textarea is created.  
- ![Image5](/images/encryption_bypass_part2/5.png)  
+ ![Image5](/images/encryption_bypass_part3/5.png)  
 
  5. Enter all your payloads in the textarea and run ***fuzzit()*** in console. Observe the console.  
- ![Image6](/images/encryption_bypass_part2/6.png)  
+ ![Image6](/images/encryption_bypass_part3/6.png)  
 
  6. Fuzzing starts and we will get responses once the fuzzing is completed.  
- ![Image7](/images/encryption_bypass_part2/7.png)
+ ![Image7](/images/encryption_bypass_part3/7.png)
 
 ### Conclusion:  
 This blog was to create a logic to fuzz encrypted request parameters using the snippet feature of devtool. The real world of encryption gets more complicated and this is just one example, and on top of that automation can be time-cosuming and difficult at times. However, real fun lies in the use of developer tools in order to the encryption logic using the application's logic.:))  
