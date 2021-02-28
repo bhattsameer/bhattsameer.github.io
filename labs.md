@@ -1,10 +1,8 @@
 ---
 layout: page
-title: ''
-subtitle: ''
+title: 'Labs'
+subtitle: 'Collection of Vulnerable labs I have prepared.'
 ---
-
-**Collection of Vulnerable labs I have prepared:**
 
 |Sr.No.|Topic/Series Name|Lab Name|Link| 
 |------|------------------|-------|----|
