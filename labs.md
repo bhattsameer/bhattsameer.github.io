@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Labs
-subtitle: 
+title: ''
+subtitle: ''
 ---
 
 Collection of my own Vulnerable labs:
