@@ -1,3 +1,9 @@
+---
+layout: page
+title: Labs
+subtitle: 
+---
+
 Collection of my own Vulnerable labs:
 
 |Sr.No.|Topic/Series Name|Lab Name|Link| 
