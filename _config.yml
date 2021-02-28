@@ -24,6 +24,7 @@ description: This website is about me and the blog is about what I work on daily
 # List of links in the navigation bar
 navbar-links:
   About Me: "aboutme"
+  Labs: "labs"
 #  Open Learning: "conference"
 #  Projects: "projects"
 #  Resources:
