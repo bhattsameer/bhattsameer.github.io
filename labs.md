@@ -4,7 +4,7 @@ title: ''
 subtitle: ''
 ---
 
-**Collection of my own Vulnerable labs:**
+**Collection of Vulnerable labs I have prepared:**
 
 |Sr.No.|Topic/Series Name|Lab Name|Link| 
 |------|------------------|-------|----|
