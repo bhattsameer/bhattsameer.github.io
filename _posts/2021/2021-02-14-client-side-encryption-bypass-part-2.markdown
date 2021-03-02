@@ -198,7 +198,9 @@ If there is anything I have missed, or you would like to add, please do let me k
 You can find me here:  
  Twitter : [@sameer_bhatt5](https://twitter.com/sameer_bhatt5)    
  Github  : [bhattsameer](https://github.com/bhattsameer)  
- LinkedIn: [bhatt-sameer](https://linkedin.com/in/bhatt-sameer)
+ LinkedIn: [bhatt-sameer](https://linkedin.com/in/bhatt-sameer)  
+ 
+ <a href="https://www.buymeacoffee.com/bhattsameer" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Tea" height="35" width="154"></a>
  
 ### Reference:
    
