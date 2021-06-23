@@ -1,7 +1,7 @@
-﻿---
+---
 layout: "post"
 title: "Intercepting Flutter iOS Application"
-date: "2021-06-23 10:00"
+date: "2021-06-23 10:20"
 excerpt: "Sharing my experience of how I have intercepted the traffic of Flutter based iOS application for dynamic analysis, Also we will see the root detection and SSL verification bypass method I have used."
 comments: false
 ---
@@ -111,9 +111,9 @@ C. Now we can run the app in jailbroken device, let's move ahead.
     > sudo service openvpn start
     ```
     <p float="left">
-      <img src="/2021/Intercepting_flutter_iOS_application/images/6.png" width="300" />
-      <img src="/2021/Intercepting_flutter_iOS_application/images/7.png" width="300" /> 
-      <img src="/2021/Intercepting_flutter_iOS_application/images/8.png" width="300" />
+      <img src="/images/Intercepting_flutter_iOS_application/6.png" width="300" />
+      <img src="/images/Intercepting_flutter_iOS_application/7.png" width="300" /> 
+      <img src="/images/Intercepting_flutter_iOS_application/8.png" width="300" />
     </p>
     
  3. Route the traffic and burp proxy configuration:  
