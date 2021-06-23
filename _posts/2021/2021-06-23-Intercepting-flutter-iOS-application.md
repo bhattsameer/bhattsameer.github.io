@@ -36,7 +36,6 @@ Create a WIFI hotspot using a second WIFI adapter and use iptables to redirect a
 Using OpenVPN to create a tunnel and use iptables to redirect all the traffic to Burp.  
 
 You can read about this all approches in details using [nviso blog](https://blog.nviso.eu/2020/06/12/intercepting-flutter-traffic-on-ios/).  
-
 I have used **Approche 2** to intercept the traffic on the application I am working on.  
 
 ### Pre-Requisites:
@@ -55,10 +54,10 @@ A. First install OpenVPN application to the iOS device from app store:
 <img src="/images/Intercepting_flutter_iOS_application/1.png" width="200" />
 
 B. Install Your Flutter application to iOS device:  
-As the application has jailbreak detection implemented, Hence when we start application it will crash on splash screen.   
-To bypass the jailbreak detection we can use **Liberty**. You can install Liberty from **[Cydia](https://en.wikipedia.org/wiki/Cydia)** using [Source repo](https://ryleyangus.com/repo)  
- i. Once you have installed Liberty, Go to your device Settings and scroll down a little and you can see the Liberty app in it.  
- ii. Click on Liberty -> Block Jailbreak Detection -> select the desired application of which we wanted to bypass the jailbreak detection.  
+  As the application has jailbreak detection implemented, Hence when we start application it will crash on splash screen.   
+  To bypass the jailbreak detection we can use **Liberty**. You can install Liberty from **[Cydia](https://en.wikipedia.org/wiki/Cydia)** using [Source repo](https://ryleyangus.com/repo)  
+  i. Once you have installed Liberty, Go to your device Settings and scroll down a little and you can see the Liberty app in it.  
+  ii. Click on Liberty -> Block Jailbreak Detection -> select the desired application of which we wanted to bypass the jailbreak detection.  
  <img src="/images/Intercepting_flutter_iOS_application/2.png" width="200" />
 
 
