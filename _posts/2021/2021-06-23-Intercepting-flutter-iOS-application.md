@@ -13,12 +13,12 @@ In this blog I will share how I have intercepted the traffic of Flutter based iO
 
 <details><summary>TL;DR Quote</summary>
 <p>
-
-
-```text
-Before trying to break any logic,  
+<b>
+  
+Before trying to break any logic,</br> 
 It is always a plus point to understand how that stuff is actually works and implemented.
-```
+
+</b>
 
 </p>
 </details>
