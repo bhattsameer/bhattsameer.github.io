@@ -80,7 +80,7 @@ C. Now we can run the app in jailbroken device, let's move ahead.
 **Let's go step by step with the process:**  
  1. Create OpenVPN file to connect:  
     Use below command to download one script which helps us in creating OpenVPN file as per our need.  
-    Script: https://github.com/Nyr/openvpn-install  
+    Script: [https://github.com/Nyr/openvpn-install](https://github.com/Nyr/openvpn-install)  
     
     ```bash
     > sudo wget https://git.io/vpn -O openvpn-install.sh
@@ -256,8 +256,7 @@ C. Now we can run the app in jailbroken device, let's move ahead.
 ### Conclusion:  
    This blog was to share how I have bypassed the security implementation of an iOS application, and how I have intercepted the traffic of flutter iOS application. As the method for the same is different compare to what we actually do in mobile application testing to intercept the traffic.
     
-   I enjoyed writing this article and hope you find this useful.
-    
+   I enjoyed writing this article and hope you find this useful.  
    Thank you for your time and stay tuned for more!
    
 You can find me here:  
@@ -269,4 +268,4 @@ You can find me here:
 
 ### Reference:  
    Huge Thanks to Nviso Team.  
-   https://blog.nviso.eu/2020/06/12/intercepting-flutter-traffic-on-ios/
+   [https://blog.nviso.eu/2020/06/12/intercepting-flutter-traffic-on-ios/](https://blog.nviso.eu/2020/06/12/intercepting-flutter-traffic-on-ios/)
