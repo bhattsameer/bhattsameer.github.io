@@ -268,4 +268,6 @@ You can find me here:
 
 ### Reference:  
    Huge Thanks to Nviso Team.  
-   [https://blog.nviso.eu/2020/06/12/intercepting-flutter-traffic-on-ios/](https://blog.nviso.eu/2020/06/12/intercepting-flutter-traffic-on-ios/)
+   [https://blog.nviso.eu/2020/06/12/intercepting-flutter-traffic-on-ios/](https://blog.nviso.eu/2020/06/12/intercepting-flutter-traffic-on-ios/)  
+   
+   [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbhattsameer.github.io%2F2021%2F06%2F23%2FIntercepting-flutter-iOS-application.html&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Visitors&edge_flat=false)](https://hits.seeyoufarm.com)
