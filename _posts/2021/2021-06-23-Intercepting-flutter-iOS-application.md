@@ -18,10 +18,10 @@ In this blog I will share how I have intercepted the traffic of Flutter based iO
 
 ### Introduction  
 
-As Flutter uses dart and dart is not proxy aware and uses its own certificate store. Hence, The application doesn’t take any proxy settings from the system and sends data directly to server, because of this we cannot intercept the request using burp suite, so changing the proxy settings in wifi or trusting any certificate won't help here.
+As Flutter uses dart, Dart is not proxy aware and uses its own certificate store. Hence, The application doesn’t take any proxy settings from the system and sends data directly to server, because of this we cannot intercept the request using [Burpsuite](https://portswigger.net/burp) or any MITM tool, so changing the proxy settings in wifi or trusting any certificate won't help here.
 
 **Questions:**  
-So what we can do here?**  
+So what we can do in this situation?**  
 
 There are multiple approches here to intercept the traffic:  
 
