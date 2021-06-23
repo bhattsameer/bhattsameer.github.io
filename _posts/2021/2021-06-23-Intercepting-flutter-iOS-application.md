@@ -22,8 +22,10 @@ As Flutter uses dart, Dart is not proxy aware and uses its own certificate store
 
 **Questions:**  
 So what we can do in this situation?  
+
 There are multiple approches here to intercept the traffic:  
 **Thought 1**:  
+
 SSH into your iOS device and use iptables to redirect the traffic.    
 ***Note: iptables won't work in iOS device as it requires kernel support.***
 
