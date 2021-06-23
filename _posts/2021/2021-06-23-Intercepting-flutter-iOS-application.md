@@ -12,7 +12,8 @@ Hi, this is [Debugger](https://github.com/bhattsameer) ready to debug Mobile App
 In this blog I will share how I have intercepted the traffic of Flutter based iOS application for dynamic analysis, Also we will see the root detection and SSL verification bypass method I have used. 
 
 ```
- Before trying to break any logic, It is always a plus point to understand how that thing is actually implemented.
+ Before trying to break any logic,  
+ It is always a plus point to understand how that stuff is actually works and implemented.
 ```
 
 ### Introduction  
