@@ -182,7 +182,7 @@ C. Now we can run the app in jailbroken device, let's move ahead.
     ![12_1.png](/images/Intercepting_flutter_iOS_application/12_1.png)  
    
     Also perform Scalar search for Magic number 0x186.
-    Now to understand what is this magic number you should read this blog by [nviso](https://blog.nviso.eu/2020/05/20/intercepting-flutter-traffic-on-android-x64/) Team.  
+    To understand what is this magic number in details I suggest you should read this blog by [nviso](https://blog.nviso.eu/2020/05/20/intercepting-flutter-traffic-on-android-x64/) Team.  
     ![13.png](/images/Intercepting_flutter_iOS_application/13.png)  
 
     Click on the output you got from string search of x509.cc and you will moved to the address directally.  
