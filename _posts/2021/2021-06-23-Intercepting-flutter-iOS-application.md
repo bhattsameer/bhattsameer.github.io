@@ -52,8 +52,10 @@ I have used **Approche 2** to intercept the traffic on the application I am work
 2. [Burp Suite](https://portswigger.net/burp) up and running.  
 3. [OpenVPN](https://apps.apple.com/us/app/openvpn-connect/id590379981) application installed in your iOS device.  
 4. Liberty - Root detection bypass [Cydia Repo](https://ryleyangus.com/repo).  
-5. Filza - To extract ipa from iOS device.
-6. Your system and mobile device must be connected to same wifi network.  
+5. Filza - To extract ipa from iOS device [Cydia Repo](https://apt.thebigboss.org/repofiles/cydia/)
+6. Your system and mobile device must be connected to same wifi network.
+7. Must have [Frida](https://frida.re/) installed in your system as well as in iOS device.
+8. Must have [Ghidra](https://ghidra-sre.org/) or any binary analyzer tool pre installed in your system.  
 
 ### Let's Get Started:  
 
@@ -171,7 +173,7 @@ C. Now we can run the app in jailbroken device, let's move ahead.
 
     ![4.png](/images/Intercepting_flutter_iOS_application/4.png)  
 
- 7. Install Ghidra and dissemble the Flutter binary.  
+ 7. Install [Ghidra](https://ghidra-sre.org/) and dissemble the Flutter binary.  
     Binary path Runner.app/Framworks/Flutter.framework/Flutter  
     Start Ghidra and drag and drop the Flutter binary to it, select all default details.  
     Wait for ghidra to complete the analysis process.  
