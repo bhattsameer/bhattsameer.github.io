@@ -12,9 +12,15 @@ Hi, this is [Debugger](https://github.com/bhattsameer) ready to debug JavaScript
 In this blog, we will continue from where we left off [Part-1](https://bhattsameer.github.io/2021/01/01/client-side-encryption-bypass-part-1.html) and [Part-2](https://bhattsameer.github.io/2021/02/14/client-side-encryption-bypass-part-2.html) of Client-Side Encryption Bypass series.
 We will see - how to create script using the application's encryption logic to fuzz encrypted parameters? We will mainly focus on the use of snippet and console feature of [DevTools](https://developers.google.com/web/tools/chrome-devtools).  
 
-```
- Debugger is always your BestFriend.
-```
+<details><summary>TL;DR Quote</summary>
+<p>
+<b>
+  
+Debugger is always your BestFriend.
+</b>
+
+</p>
+</details>
 
 ### Introduction
 
