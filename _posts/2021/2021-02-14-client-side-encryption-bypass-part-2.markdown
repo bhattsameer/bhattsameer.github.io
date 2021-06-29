@@ -13,9 +13,15 @@ Hi, this is [Debugger](https://github.com/bhattsameer) ready to debug JavaScript
 In this blog, we will continue from where we left off [Part-1](https://github.com/bhattsameer/bhattsameer.github.io/blob/main/_posts/2021/2021-01-01-client-side-encryption-bypass-part-1.markdown) in this Client-side Encryption Bypass Series.   
 We will see some cool tips and tricks related to [DevTools](https://developers.google.com/web/tools/chrome-devtools), which will be helpful to you when trying to break the encryption logic on your own.  
 
-```
- Debugger is always your BestFriend.
-```
+<details><summary>TL;DR Quote</summary>
+<p>
+<b>
+  
+Debugger is always your BestFriend.
+</b>
+
+</p>
+</details>
 
 ### Introduction
 
