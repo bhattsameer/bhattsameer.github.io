@@ -18,9 +18,15 @@ Part 2: Some cool magic tricks which helps in finding the encryption logic easil
 Part 3: Understanding the Logic of encryption and fuzz the parameters.  
 There is a lot more, stay tuned!  
 
-```
- Debugger is always your BestFriend.
-```
+<details><summary>TL;DR Quote</summary>
+<p>
+<b>
+  
+Debugger is always your BestFriend.
+</b>
+
+</p>
+</details>
 
 ### Introduction
 
