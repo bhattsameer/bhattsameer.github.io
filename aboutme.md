@@ -8,8 +8,23 @@ title: About me
 </div>
 
 <p align='center'> 
-<a href="https://www.linkedin.com/in/bhatt-sameer"><img height="30" src="https://raw.githubusercontent.com/trinwin/trinwin/master/icons/linkedin.png?raw=true"></a></p>
+<a href="https://www.linkedin.com/in/bhatt-sameer"><img height="30" src="https://raw.githubusercontent.com/trinwin/trinwin/master/icons/linkedin.png?raw=true"></a>
+<a href="https://twitter.com/sameer_bhatt5"><img height="30" src="https://raw.githubusercontent.com/trinwin/trinwin/master/icons/twitter.png?raw=true">
+</a>
+<a href="https://medium.com/@bhattsameer"><img height="30" src="https://raw.githubusercontent.com/trinwin/trinwin/master/icons/medium.png?raw=true">
+</a>
+<a href="https://instagram.com/sameer_bhatt5"><img height="30" src="https://raw.githubusercontent.com/trinwin/trinwin/master/icons/instagram.png?raw=true">
+</a>
+<a href="https://www.buymeacoffee.com/bhattsameer"><img height="30" src="https://github.com/WaylonWalker/WaylonWalker/blob/main/icon/by-me-a-coffee.png?raw=true"></a></p>
 
+<div align="center">
+<h3> :boy: Sameer Bhatt | 💻 Cyber Security Enthusiast | 🌏 India </h3> 
+</div>
+<div align="center">
+<p>  
+I Am a Cyber Security Enthusiast and Your Friendly Debugger, With No BreakPoints :)) 
+</p>
+</div>
 
 I have stared my journey in the security field as a bug bounty hunter and post completing Bachelor of Engineering in Computer I have stared my professional journey as Security Analyst. Currently I am working as Security Analyst and Manager at [Net-Square Pvt. Ltd](https://net-square.com). In these 3+ years of experience I have performed pentesting on many national and international Banking, Financial, Government, Health etc. organization's Internal and external applications with direct client communication.  
 
@@ -40,4 +55,9 @@ Below are some projects I have worked on In my college time, to improve my skill
 
 You can find more projects at [Github](https://github.com/bhattsameer/)
 
+<div align="center">
+
+----------------------------</br>
+![](https://komarev.com/ghpvc/?username=bhattsameer&color=brightgreen)
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbhattsameer.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Visitors&edge_flat=false)](https://hits.seeyoufarm.com)
+</div>
