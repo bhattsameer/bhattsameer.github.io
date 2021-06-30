@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About me
+subtitle: 
 ---
 
 <div align="center">
@@ -12,7 +13,7 @@ title: About me
 <a href="https://twitter.com/sameer_bhatt5"><img height="25" src="https://img.shields.io/badge/twitter-%231DA1F2.svg?&style=for-the-badge&logo=twitter&logoColor=white"></a>
 <a href="https://bhattsameer.github.io"><img height="25" src="https://img.shields.io/badge/Website-%23354230.svg?&style=for-the-badge&logo=medium&logoColor=white"></a>
 <a href="https://instagram.com/sameer_bhatt5"><img height="25" src="https://img.shields.io/badge/instagram-%23E4405F.svg?&style=for-the-badge&logo=instagram&logoColor=white"></a>
-<a href="https://www.buymeacoffee.com/bhattsameer"><img height="25" src="https://img.shields.io/badge/buymeatea-%23ffffff.svg?&style=for-the-badge&logo=buymeacoffee&logoColor=yellow"></a></p>
+<a href="https://www.buymeacoffee.com/bhattsameer"><img height="25" src="https://img.shields.io/badge/buymeatea-%23fffdd0.svg?&style=for-the-badge&logo=buymeacoffee&logoColor=yellow"></a></p>
 
 <div align="center">
 <h3> 👦 Sameer Bhatt | 💻 Cyber Security Enthusiast | 🌏 India </h3> 
