@@ -17,13 +17,14 @@ I love 💖 doing things for the infosec community, I contribute to community by
 - ✔️ Network Assessment.
 - ✔️ Source Code Review (Automate and Manual).
 - ✔️ OSINT (Built some OSINT tools [Numspy](https://github.com/bhattsameer/numspy))
-- ✔️ Automating boring tasks with Programming (Scripting experience [devtool-snippets-forhacks](https://github.com/bhattsameer/devtool-snippets-forhacks)) 
+- ✔️ Automating boring tasks with Programming (Scripting experience [DebuggingScripts](https://github.com/bhattsameer/devtool-snippets-forhacks)) 
 - ✔️ Playing CTFs and Hacking related challenges ([CTFWriteUps](https://github.com/bhattsameer/CTFWriteUps))
 - ✔️ Developing Vulnerable applications and Labs for Learning purpose. ([Labs](https://bhattsameer.github.io/labs))
 
 ### My Projects: 
 
 Below are some projects I have worked on In my college time, to improve my skill set.
+
 | Project Name | Links |
 |--------------|-------|
 | Things Translator| [Research Paper](http://ijsart.com/Home/IssueDetail/20872), [Github Repo](https://github.com/bhattsameer/ThingsTranslator), [YouTube](https://www.youtube.com/watch?v=xYSLxFrCJt0) |
