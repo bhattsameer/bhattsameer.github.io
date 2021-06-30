@@ -8,7 +8,7 @@ subtitle: Hola, This is Debugger.
 
 <div align="center">
   <h1> Hola! This is Debugger. <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px"></h1>
-</div>
+
  
 <p align='center'> 
 <a href="https://www.linkedin.com/in/bhatt-sameer"><img height="30" src="https://raw.githubusercontent.com/trinwin/trinwin/master/icons/linkedin.png?raw=true"></a>&nbsp;&nbsp;
@@ -17,7 +17,7 @@ subtitle: Hola, This is Debugger.
 <a href="https://instagram.com/sameer_bhatt5"><img height="30" src="https://raw.githubusercontent.com/trinwin/trinwin/master/icons/instagram.png?raw=true"></a>&nbsp;&nbsp;
 <a href="https://www.buymeacoffee.com/bhattsameer"><img height="30" src="https://github.com/WaylonWalker/WaylonWalker/blob/main/icon/by-me-a-coffee.png?raw=true"></a>&nbsp;&nbsp;
 
-
+</div>
 <div align="center">
 <h3> :boy: Sameer Bhatt | 💻 Cyber Security Enthusiast | 🌏 India </h3> 
 </div>
