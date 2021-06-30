@@ -1,7 +1,6 @@
 ---
 layout: page
 title: About me
-subtitle: Hola, This is Debugger.
 ---
 
 <div align="center">
