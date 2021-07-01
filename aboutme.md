@@ -35,7 +35,7 @@ I love 💖 doing things for the infosec community, I contribute to community by
 - ✔️ API Assessment. 
 - ✔️ Network Assessment.
 - ✔️ Source Code Review (Automate and Manual).
-- ✔️ OSINT (Built some OSINT tools [Numspy](https://github.com/bhattsameer/numspy))
+- ✔️ OSINT (Built one OSINT tool [Numspy](https://github.com/bhattsameer/numspy))
 - ✔️ Automating boring tasks with Programming ([DebuggingScripts](https://github.com/bhattsameer/devtool-snippets-forhacks)) 
 - ✔️ Playing CTFs and Hacking related challenges ([CTFWriteUps](https://github.com/bhattsameer/CTFWriteUps))
 - ✔️ Developing Vulnerable applications and Labs for Learning purpose. ([Labs](https://bhattsameer.github.io/labs))
