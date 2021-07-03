@@ -51,7 +51,7 @@ Below are some projects I have worked on In my college time, to improve my skill
 | EyeShield| [Github Repo](https://github.com/bhattsameer/Eyeshield) |
 | MyCroft AI | [YouTube](https://www.youtube.com/watch?v=zOucJxqYTtM) |  
 
-You can find more projects at [Github](https://github.com/bhattsameer/)
+You can find more projects at [Github](https://github.com/bhattsameer?tab=repositories)
 
 <p align='center'>
 <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbhattsameer.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Visitors&edge_flat=false"/></a>
