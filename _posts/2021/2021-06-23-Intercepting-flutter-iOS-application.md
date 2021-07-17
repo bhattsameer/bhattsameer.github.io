@@ -160,6 +160,8 @@ C. Now we can run the app in jailbroken device, let's move ahead.
     In browser Filza, access to same path and download the zip file.  
 
     ![3.png](/images/Intercepting_flutter_iOS_application/3.png)  
+    
+    **Note:** If we install the application directly from appstore, the application has encryption flag enabled. Hence to proceed with the binary analysis we first need to decrypt the application binary, For that you can use [Clutch](https://github.com/KJCracks/Clutch) Or [Frida-ios-dump](https://github.com/AloneMonkey/frida-ios-dump).
 
  6. Extract Zip in your system and open it up through Terminal:  
     
