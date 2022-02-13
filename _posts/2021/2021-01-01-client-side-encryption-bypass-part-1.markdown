@@ -137,7 +137,7 @@ Sometimes they may use multiple encryption techniques on the same piece of data,
     Once you have identifed that move on with trying to break it. is it a parameter which is encrypted? or the whole request body?
     great you are good to go then.
     
-    For this step I am hoping you are already familier with [**burpsuite tool**](https://portswigger.net/burp) but it is not compulsory as we are just using burp to understand the request structure. You can also do it with DevTools Network option as well.
+    For this step I am hoping you are already familier with [**burpsuite tool**](https://portswigger.net/burp) but it is not compulsory as we are just using burp to understand the request structure. You can also do it with DevTools Network option as well. Also, Here is a [quick link](https://www.comparitech.com/net-admin/burp-suite-cheat-sheet/) which can help you to begin with [**burpsuite tool**](https://portswigger.net/burp).
     
     Let's intercept the login request first and observe the request and response structure.
         
