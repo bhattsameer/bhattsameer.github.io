@@ -8,7 +8,7 @@ subtitle:
   <h1> Hola! This is Debugger. <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px" height="25px"></h1>
 </div>
 
-<img src="https://pbs.twimg.com/profile_banners/397155039/1655197365/1080x360" alt="header image"/>
+<img src="/img/1500x500.jpg" alt="header image"/>
 
 <p align='center'> 
 <a href="https://www.linkedin.com/in/bhatt-sameer"><img height="25" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
