@@ -22,7 +22,7 @@ subtitle:
 </div>
 <div align="center">
 <p>  
-I Am a Cyber Security Enthusiast and Your Friendly Debugger, With No BreakPoints :)) 
+I Am a Cyber Security Enthusiast and Your Friendly Debugger :)) 
 </p>
 </div>
 
